@@ -18,6 +18,7 @@ export interface Project {
   image?: string;
   live: string;
   actionText: string;
+  links?: ExternalLinkItem[];
   status: string;
   architectureOverview: string;
   highlights: string[];
@@ -114,8 +115,13 @@ export const PROJECTS: Project[] = [
       "Cross-platform mobile and web marketplace built with Flutter and Node.js. Features location-based merchant discovery, cart management, and multi-channel checkout.",
     stack: ["Flutter", "Node.js", "PostgreSQL", "Hive", "Offline Cache"],
     image: "/projects/minimart.jpeg",
-    live: "https://play.google.com/store/apps/details?id=minimart.vetristech.com",
-    actionText: "Play Store ↗",
+    live: "https://minimart.vetristech.com/",
+    actionText: "Web App ↗",
+    links: [
+      { label: "Web App ↗", url: "https://minimart.vetristech.com/" },
+      { label: "Google Play ↗", url: "https://play.google.com/store/apps/details?id=minimart.vetristech.com" },
+      { label: "App Store ↗", url: "https://apps.apple.com/app/mini-mart-marketplace/id6804913345" },
+    ],
     status: "Live on Web, Play Store & App Store",
     architectureOverview:
       "Engineered an offline-first cross-platform Flutter application backed by an asynchronous Node.js and PostgreSQL distributed backend. Built custom local state hydration pipelines that allow continuous catalog browsing and cart persistence even in zero-bandwidth environments, reconciling deltas automatically upon network recovery.",
@@ -132,12 +138,22 @@ export const PROJECTS: Project[] = [
     ],
     externalLinks: [
       {
-        label: "Open Live Product ↗",
+        label: "Web App ↗",
+        url: "https://minimart.vetristech.com/",
+        isPrimary: true,
+      },
+      {
+        label: "Google Play ↗",
         url: "https://play.google.com/store/apps/details?id=minimart.vetristech.com",
         isPrimary: true,
       },
       {
-        label: "GitHub / Case Study ↗",
+        label: "Apple App Store ↗",
+        url: "https://apps.apple.com/app/mini-mart-marketplace/id6804913345",
+        isPrimary: true,
+      },
+      {
+        label: "GitHub / Profile ↗",
         url: "https://github.com/ahmerthiserh",
         isPrimary: false,
       },
@@ -176,33 +192,49 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "pos-engine",
-    title: "Offline-First POS Architecture",
-    role: "Backend & Systems Lead",
+    id: "sales-rep-analytics",
+    title: "SalesRepAnalytics",
+    role: "Lead Engineer & Full-Stack Architect",
     summary:
-      "Fault-tolerant retail point-of-sale system leveraging local caching nodes to execute sales offline and automatically synchronize ledger state once connectivity is restored.",
-    stack: ["Laravel", "PHP", "SQLite Sync", "RBAC", "REST APIs"],
-    live: "https://github.com/ahmerthiserh",
-    actionText: "Core Spec ↗",
-    status: "Commercial Core",
+      "Enterprise sales performance and revenue intelligence platform. Automates sales representative tracking, multi-tier commission calculations, pipeline forecasting, and real-time KPI visualization across distributed sales teams.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "REST APIs",
+    ],
+    image: "/projects/salesrepanalytics.jpg",
+    live: "https://salesrepanalytics.com/",
+    actionText: "Live Platform ↗",
+    links: [
+      { label: "Live Platform ↗", url: "https://salesrepanalytics.com/" },
+    ],
+    status: "Live Platform",
     architectureOverview:
-      "Constructed a dual-layer sync point-of-sale engine allowing retail cashiers to process hundreds of daily sales, print cryptographic receipts, and deduct localized inventory entirely offline. When connection recovers, the local SQLite daemon dispatches encrypted batch payloads to a central Laravel cluster, automatically managing version conflict resolution and inventory rollback triggers.",
+      "Architected an enterprise-grade multi-tenant revenue analytics suite built with Next.js, Node.js, and PostgreSQL. Designed high-throughput analytical query pipelines aggregating quota velocity and commission tiers with sub-second dashboard latencies.",
     highlights: [
-      "Dual-layer sync architecture using embedded SQLite client databases that cache sales receipts during complete internet blackouts.",
-      "Automatic bulk synchronization with automated rollback mechanisms for race-condition inventory conflicts.",
-      "Local LAN terminal sync mechanism enabling multi-register price book consistency before cloud uplink.",
+      "Real-time metrics aggregation and performance leaderboards with cached analytics queries.",
+      "Role-Based Access Control (RBAC) separating sales reps, regional managers, and executive leadership dashboards.",
+      "Automated pipeline velocity tracking and commission ledger calculation engine.",
     ],
     detailedStack: [
-      { category: "Core Framework", items: ["Laravel 10/11", "PHP", "Daemon Workers"] },
-      { category: "Client Embedded DB", items: ["SQLite 3", "Encrypted Cache"] },
-      { category: "Central Database", items: ["MySQL", "Redis Pub/Sub"] },
-      { category: "Architecture & DevOps", items: ["Offline Sync Protocol", "Docker", "Linux Systemd", "REST APIs"] },
+      { category: "Frontend Framework", items: ["Next.js", "TypeScript", "Tailwind CSS", "Recharts"] },
+      { category: "Backend Engine", items: ["Node.js", "Express", "REST APIs", "Prisma"] },
+      { category: "Database & Storage", items: ["PostgreSQL", "Redis Caching"] },
+      { category: "Architecture & Security", items: ["RBAC", "JWT / OAuth2", "CI/CD Actions", "Docker"] },
     ],
     externalLinks: [
       {
-        label: "Core Architecture Repo ↗",
-        url: "https://github.com/ahmerthiserh",
+        label: "Live Platform ↗",
+        url: "https://salesrepanalytics.com/",
         isPrimary: true,
+      },
+      {
+        label: "GitHub / Profile ↗",
+        url: "https://github.com/ahmerthiserh",
+        isPrimary: false,
       },
     ],
   },
