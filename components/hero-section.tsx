@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FileDown, ExternalLink, ArrowUpRight, Clock, Mail } from "lucide-react";
 import { PROFILE_DATA } from "@/data/portfolio";
@@ -6,13 +7,23 @@ export function HeroSection() {
   return (
     <section className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            {PROFILE_DATA.name}
-          </h1>
-          <p className="text-base sm:text-lg text-neutral-400 font-medium mt-1">
-            {PROFILE_DATA.title}
-          </p>
+        <div className="flex items-center gap-4">
+          <Image
+            src={PROFILE_DATA.avatar}
+            alt={PROFILE_DATA.name}
+            width={72}
+            height={72}
+            priority
+            className="w-16 h-16 sm:w-18 sm:h-18 rounded-full border border-neutral-800 object-cover shadow-md bg-neutral-900 shrink-0"
+          />
+          <div>
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+              {PROFILE_DATA.name}
+            </h1>
+            <p className="text-base sm:text-lg text-neutral-400 font-medium mt-0.5">
+              {PROFILE_DATA.title}
+            </p>
+          </div>
         </div>
 
         <span className="self-start sm:self-center inline-flex items-center gap-2 text-xs font-medium text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-3 py-1.5 rounded-full shadow-sm">
@@ -52,7 +63,7 @@ export function HeroSection() {
           className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all shadow-sm active:scale-[0.98]"
         >
           <FileDown className="w-4 h-4" />
-          Download Resume (PDF)
+          Download PDF Resume
         </a>
 
         <Link
