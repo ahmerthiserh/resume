@@ -4,7 +4,7 @@ import { PROFILE_DATA } from "@/data/portfolio";
 export function Footer() {
   return (
     <footer className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500 font-mono">
-      <p>© {new Date().getFullYear()} {PROFILE_DATA.name}. All rights reserved.</p>
+      <p>© 2026 {PROFILE_DATA.name}. All rights reserved.</p>
       <div className="flex items-center gap-5 text-slate-400">
         <Link
           href={PROFILE_DATA.linkedin}

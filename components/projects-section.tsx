@@ -1,15 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Cpu, Layers, ExternalLink } from "lucide-react";
-import { PROJECTS, type Project } from "@/data/portfolio";
-import { ProjectModal } from "@/components/project-modal";
+import { Cpu, ExternalLink } from "lucide-react";
+import { PROJECTS } from "@/data/portfolio";
 
 export function ProjectsSection() {
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
-
   return (
     <section className="space-y-6">
       <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
@@ -88,39 +82,22 @@ export function ProjectsSection() {
                 ))}
               </div>
 
-              {/* Direct Action Bar */}
-              <div className="pt-4 border-t border-slate-800/70 flex flex-wrap items-center justify-between gap-3">
-                <button
-                  type="button"
-                  onClick={() => setActiveProject(project)}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600/10 border border-blue-500/30 text-blue-400 hover:bg-blue-600 hover:text-white hover:border-blue-500 text-xs font-semibold transition-all shadow-sm active:scale-[0.98]"
+              {/* Direct Action Link */}
+              <div className="pt-4 border-t border-slate-800/70 flex items-center justify-end">
+                <Link
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-950 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-900 text-slate-200 hover:text-white text-xs font-semibold transition-all shadow-sm active:scale-[0.98]"
                 >
-                  <Layers className="w-3.5 h-3.5" />
-                  Deep Architecture Specs ↗
-                </button>
-
-                <div className="flex items-center gap-2">
-                  <Link
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white text-xs font-medium transition-colors"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
-                    {project.actionText}
-                  </Link>
-                </div>
+                  <ExternalLink className="w-3.5 h-3.5 text-blue-400" />
+                  {project.actionText}
+                </Link>
               </div>
             </div>
           </div>
         ))}
       </div>
-
-      {/* Accessible Interactive Detail Modal */}
-      <ProjectModal
-        project={activeProject}
-        onClose={() => setActiveProject(null)}
-      />
     </section>
   );
 }
