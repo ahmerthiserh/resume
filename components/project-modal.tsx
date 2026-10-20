@@ -52,21 +52,21 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md transition-all duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md transition-all duration-200"
       onClick={onClose}
     >
       {/* Modal Dialog Container */}
       <div
         ref={modalRef}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#121212] border border-[#262626] shadow-2xl p-6 sm:p-8 text-neutral-300 animate-in fade-in zoom-in-95 duration-200"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#0b1222] border border-slate-800 shadow-2xl shadow-blue-950/40 p-6 sm:p-8 text-slate-200 animate-in fade-in zoom-in-95 duration-200"
       >
         {/* Close Button (✕) */}
         <button
           type="button"
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-5 right-5 p-2 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-700"
+          className="absolute top-5 right-5 p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <X className="w-5 h-5" />
         </button>
@@ -77,17 +77,17 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             <h3 id="modal-title" className="text-2xl font-bold tracking-tight text-white">
               {project.title}
             </h3>
-            <span className="text-xs font-mono font-medium text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2.5 py-0.5 rounded-full">
-              {project.status}
+            <span className="text-xs font-mono font-medium text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
+              ● {project.status}
             </span>
           </div>
-          <p className="text-sm font-medium text-neutral-400">
+          <p className="text-sm font-mono text-blue-400 font-medium">
             {project.role}
           </p>
         </div>
 
         {/* External Action Links */}
-        <div className="flex flex-wrap items-center gap-3 mt-4 pt-3 border-t border-neutral-800">
+        <div className="flex flex-wrap items-center gap-3 mt-4 pt-3 border-t border-slate-800/80">
           {project.externalLinks.map((link) => (
             <Link
               key={link.label}
@@ -96,8 +96,8 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
                 link.isPrimary
-                  ? "bg-white text-black hover:bg-neutral-200 shadow-sm"
-                  : "bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-700"
+                  ? "bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-500/20"
+                  : "bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
               }`}
             >
               <ExternalLink className="w-3.5 h-3.5" />
@@ -108,7 +108,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Project Header Preview Image */}
         {project.image && (
-          <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950 mt-5 shadow-inner">
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-slate-800 bg-slate-950 mt-5 shadow-inner">
             <Image
               src={project.image}
               alt={project.title}
@@ -122,10 +122,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Architecture Overview */}
         <div className="mt-6 space-y-2">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-blue-400 font-mono">
             Architecture Overview
           </h4>
-          <p className="text-sm text-neutral-300 leading-relaxed bg-[#161616] p-4 rounded-xl border border-neutral-800/70">
+          <p className="text-sm text-slate-300 leading-relaxed bg-slate-950/70 p-4 rounded-xl border border-slate-800/80">
             {project.architectureOverview}
           </p>
         </div>
@@ -137,12 +137,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Key Engineering Highlights */}
         <div className="mt-6 space-y-3">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-blue-400 font-mono">
             Key Engineering Highlights
           </h4>
           <ul className="space-y-2.5 text-sm">
             {project.highlights.map((highlight, idx) => (
-              <li key={idx} className="flex items-start gap-2.5 text-neutral-300">
+              <li key={idx} className="flex items-start gap-2.5 text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{highlight}</span>
               </li>
@@ -152,18 +152,18 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Full Tech Stack Categorized */}
         <div className="mt-6 space-y-3">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-blue-400 font-mono">
             Full Tech Stack & Infrastructure
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {project.detailedStack.map((group) => (
               <div
                 key={group.category}
-                className="p-3.5 rounded-xl border border-neutral-800/80 bg-[#171717]"
+                className="p-3.5 rounded-xl border border-slate-800/80 bg-slate-950/60"
               >
                 <div className="flex items-center gap-1.5 mb-2">
                   {getCategoryIcon(group.category)}
-                  <span className="text-xs font-semibold text-neutral-300">
+                  <span className="text-xs font-semibold text-slate-300">
                     {group.category}
                   </span>
                 </div>
@@ -171,7 +171,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="text-[11px] bg-neutral-900 border border-neutral-800 text-neutral-400 px-2 py-0.5 rounded"
+                      className="text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 px-2 py-0.5 rounded"
                     >
                       {item}
                     </span>
@@ -183,12 +183,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         {/* Modal Footer Note */}
-        <div className="mt-8 pt-4 border-t border-neutral-800 flex items-center justify-between text-xs text-neutral-500">
-          <span>Click outside or press <kbd className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-400 font-mono">ESC</kbd> to close</span>
+        <div className="mt-8 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-500 font-mono">
+          <span>Click outside or press <kbd className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 font-mono">ESC</kbd> to close</span>
           <button
             type="button"
             onClick={onClose}
-            className="text-neutral-400 hover:text-white transition-colors"
+            className="text-slate-400 hover:text-white transition-colors"
           >
             Close
           </button>

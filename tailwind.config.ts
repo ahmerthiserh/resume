@@ -10,10 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0a",
-        surface: "#141414",
-        border: "#262626",
-        accent: "#3b82f6",
+        background: "#030712",
+        canvas: "#030712",
+        surface: "#0b1222",
+        "surface-card": "#0f172a",
+        border: "#1e293b",
+        "border-glow": "#3b82f6",
+        accent: "#2563eb",
       },
     },
   },

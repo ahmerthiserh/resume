@@ -42,7 +42,7 @@ export const PROFILE_DATA = {
   name: "Ahmad Isah",
   title: "Full-Stack Software Engineer | Mobile & Cloud Architecture",
   avatar: "/avatar.png",
-  availability: "Available for Q4 Contracts",
+  availability: "Available for Contract & Sprint Engagements",
   bioHighlight1: "Flutter",
   bioHighlight2: "Node.js, Laravel",
   bio: "Full-Stack Software Engineer specializing in cross-platform mobile systems and scalable backend/payment architectures. Proven track record engineering offline-first POS engines, automated reconciliation pipelines, and commercial production platforms.",

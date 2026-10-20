@@ -68,7 +68,7 @@ export function ArchitectureDiagram({ projectId }: ArchitectureDiagramProps) {
         </div>
 
         {/* Diagram Card Container */}
-        <div className="relative overflow-x-auto rounded-xl border border-neutral-800 bg-[#141414] p-4 text-white">
+        <div className="relative overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/90 p-4 text-white">
           <div className="min-w-[620px]">
             <svg viewBox="0 0 740 230" className="w-full h-auto select-none font-mono">
               <defs>
@@ -227,7 +227,7 @@ export function ArchitectureDiagram({ projectId }: ArchitectureDiagramProps) {
         </div>
 
         {/* Dynamic Node Detail Explainer Banner */}
-        <div className="flex items-start gap-2.5 p-3 rounded-lg bg-[#181818] border border-neutral-800 text-xs text-neutral-300 transition-all">
+        <div className="flex items-start gap-2.5 p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 transition-all">
           <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
           {activeNode && nodes[activeNode] ? (
             <div>
@@ -302,7 +302,7 @@ export function ArchitectureDiagram({ projectId }: ArchitectureDiagramProps) {
         </div>
 
         {/* Diagram Card Container */}
-        <div className="relative overflow-x-auto rounded-xl border border-neutral-800 bg-[#141414] p-4 text-white">
+        <div className="relative overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/90 p-4 text-white">
           <div className="min-w-[620px]">
             <svg viewBox="0 0 740 230" className="w-full h-auto select-none font-mono">
               <defs>
@@ -471,7 +471,7 @@ export function ArchitectureDiagram({ projectId }: ArchitectureDiagramProps) {
         </div>
 
         {/* Dynamic Node Detail Explainer Banner */}
-        <div className="flex items-start gap-2.5 p-3 rounded-lg bg-[#181818] border border-neutral-800 text-xs text-neutral-300 transition-all">
+        <div className="flex items-start gap-2.5 p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 transition-all">
           <Info className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
           {activeNode && nodes[activeNode] ? (
             <div>
@@ -539,7 +539,7 @@ export function ArchitectureDiagram({ projectId }: ArchitectureDiagramProps) {
         </div>
 
         {/* Diagram Card Container */}
-        <div className="relative overflow-x-auto rounded-xl border border-neutral-800 bg-[#141414] p-4 text-white">
+        <div className="relative overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/90 p-4 text-white">
           <div className="min-w-[620px]">
             <svg viewBox="0 0 740 230" className="w-full h-auto select-none font-mono">
               <defs>
@@ -688,7 +688,7 @@ export function ArchitectureDiagram({ projectId }: ArchitectureDiagramProps) {
         </div>
 
         {/* Dynamic Node Detail Explainer Banner */}
-        <div className="flex items-start gap-2.5 p-3 rounded-lg bg-[#181818] border border-neutral-800 text-xs text-neutral-300 transition-all">
+        <div className="flex items-start gap-2.5 p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 transition-all">
           <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
           {activeNode && nodes[activeNode] ? (
             <div>
