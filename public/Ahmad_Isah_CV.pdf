@@ -1,0 +1,57 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 720 >>
+stream
+BT
+/F1 20 Tf
+50 720 Td
+(Ahmad Isah - Full-Stack Software Engineer) Tj
+/F1 11 Tf
+0 -25 Td
+(Email: ahmadisah6293@gmail.com  |  LinkedIn: linkedin.com/in/ahmerthiserh  |  GitHub: github.com/ahmerthiserh) Tj
+0 -20 Td
+(Timezone: GMT+1 (Nigeria / Europe overlap)  |  Mobile & Cloud Architecture) Tj
+0 -30 Td
+(CORE SKILLS: Flutter, Dart, Node.js, TypeScript, Laravel, PostgreSQL, MySQL, Redis, REST/Webhooks) Tj
+0 -30 Td
+(EXPERIENCE:) Tj
+0 -20 Td
+(- Vetris Tech (2024 - Present): Lead Software Engineer & Technical Co-Founder) Tj
+0 -15 Td
+(  Shipped Mini Mart (cross-platform commerce) and V Pay & FluxBills (fintech architecture).) Tj
+0 -20 Td
+(- AWS Global Tech (April 2026 - Present): Software & Product Development Engineer) Tj
+0 -15 Td
+(  Architected enterprise POS modules, offline sync engines, RBAC security, analytics dashboards.) Tj
+0 -20 Td
+(- Briatek Computers (2022 - April 2026): Full-Stack Developer Intern) Tj
+0 -15 Td
+(  Maintained web apps, optimized SQL query latency, and integrated external APIs.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000226 00000 n 
+0000000998 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1067
+%%EOF
