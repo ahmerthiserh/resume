@@ -1,11 +1,11 @@
-import { Terminal, Server, Cloud, Network } from "lucide-react";
+import { Smartphone, Server, Database, ShieldCheck, Terminal } from "lucide-react";
 import { TECHNICAL_STACK } from "@/data/portfolio";
 
 const CATEGORY_ICONS: Record<string, typeof Terminal> = {
-  "Mobile & Frontend": Terminal,
-  "Backend & Systems": Server,
-  "DevOps & Tools": Cloud,
-  "Architecture Patterns": Network,
+  "Mobile Development": Smartphone,
+  "Backend & APIs": Server,
+  "Databases & Cloud": Database,
+  "FinTech & Integrations": ShieldCheck,
 };
 
 export function SkillsSection() {
@@ -14,14 +14,14 @@ export function SkillsSection() {
       <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-wider text-blue-400 font-mono">
-            Technical Stack & Core Architecture
+            Technical Stack Matrix
           </h2>
           <p className="text-xs text-slate-400 mt-0.5">
-            Toolchains, distributed design patterns, and engineering domains
+            Core production proficiencies directly synchronized with official CV
           </p>
         </div>
         <span className="text-xs font-mono text-slate-500 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">
-          4 Domains
+          {TECHNICAL_STACK.length} Domains
         </span>
       </div>
 

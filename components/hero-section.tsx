@@ -1,63 +1,55 @@
-import Image from "next/image";
 import Link from "next/link";
-import { FileDown, ExternalLink, ArrowUpRight, Clock, Mail, MapPin } from "lucide-react";
+import { FileDown, ExternalLink, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { PROFILE_DATA } from "@/data/portfolio";
 
 export function HeroSection() {
   return (
     <section className="space-y-6">
-      {/* Top Status & Avatar Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
-        <div className="flex items-center gap-4">
-          <div className="relative">
-            <Image
-              src="/avatar.png"
-              alt="Ahmad Isah"
-              width={84}
-              height={84}
-              priority
-              className="w-[84px] h-[84px] rounded-full object-cover border-2 border-slate-900 ring-2 ring-blue-500/30 shadow-lg shadow-blue-950/50 bg-slate-900"
-            />
-            <span className="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-slate-950" />
-          </div>
-
-          <div>
-            <div className="flex items-center gap-3">
-              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-                Ahmad Isah
-              </h1>
-            </div>
-            <p className="text-base sm:text-lg text-slate-300 font-medium mt-0.5">
-              Full-Stack Software Engineer <span className="text-blue-400">|</span> Mobile & Cloud Architecture
-            </p>
-          </div>
+      {/* Top Status & Terminal Brand Header */}
+      <div className="flex items-start gap-4">
+        {/* Terminal Icon: fixed size, shrink-0 */}
+        <div className="w-12 h-12 rounded-xl bg-blue-950/40 border border-blue-500/30 flex items-center justify-center text-blue-400 font-mono text-lg font-bold shrink-0 mt-1 shadow-inner shadow-blue-500/10 select-none">
+          &gt;_
         </div>
 
-        <span className="self-start sm:self-center inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 text-xs rounded-full shadow-sm font-medium">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          Available for Contract & Sprint Engagements
-        </span>
+        {/* Text Area */}
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              {PROFILE_DATA.name}
+            </h1>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-emerald-400 bg-emerald-950/50 border border-emerald-500/20 rounded-full shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              {PROFILE_DATA.availability}
+            </span>
+          </div>
+
+          <p className="text-sm sm:text-base font-medium text-slate-300 mt-1">
+            Full-Stack Software Engineer{" "}
+            <span className="text-slate-600">|</span> Mobile &amp; Cloud Architecture
+          </p>
+        </div>
       </div>
 
-      {/* Bio with Gradient Tech Highlights */}
+      {/* Professional Summary from CV */}
       <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-        Full-Stack Software Engineer specializing in cross-platform mobile systems (
-        <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-          Flutter
-        </span>
-        ) and scalable backend/payment architectures (
-        <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-300">
-          Node.js, Laravel
-        </span>
-        ). Proven track record engineering offline-first POS engines, automated reconciliation pipelines, and commercial production platforms.
+        {PROFILE_DATA.bio}
       </p>
 
-      {/* Meta Row with Iconography */}
+      {/* Meta Row with Location, Phone, Email */}
       <div className="flex flex-wrap items-center gap-y-2 gap-x-5 text-sm text-slate-400 pt-1">
         <span className="inline-flex items-center gap-1.5">
           <MapPin className="w-4 h-4 text-blue-400/80" />
-          GMT+1 (Nigeria · Europe overlap)
+          {PROFILE_DATA.location}
         </span>
+        <span className="hidden sm:inline text-slate-700">•</span>
+        <Link
+          href={`tel:${PROFILE_DATA.phone}`}
+          className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors underline-offset-4 hover:underline"
+        >
+          <Phone className="w-4 h-4 text-blue-400/80" />
+          {PROFILE_DATA.phone}
+        </Link>
         <span className="hidden sm:inline text-slate-700">•</span>
         <Link
           href={`mailto:${PROFILE_DATA.email}`}
@@ -82,7 +74,7 @@ export function HeroSection() {
         </a>
 
         <Link
-          href="https://www.linkedin.com/in/ahmerthiserh"
+          href={PROFILE_DATA.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all active:scale-[0.98]"
@@ -94,7 +86,7 @@ export function HeroSection() {
         </Link>
 
         <Link
-          href="https://github.com/ahmerthiserh"
+          href={PROFILE_DATA.github}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all active:scale-[0.98]"
