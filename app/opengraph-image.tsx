@@ -60,7 +60,6 @@ export default async function OpengraphImage() {
               boxShadow: "0 30px 80px rgba(37,99,235,0.45)",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={photoSrc}
               alt=""

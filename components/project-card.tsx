@@ -22,10 +22,10 @@ export function ProjectCard({ project, wide = false }: { project: Project; wide?
             alt={project.title}
             fill
             sizes={wide ? "(max-width: 1024px) 100vw, 580px" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 290px"}
-            className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.05]"
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent" />
         <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-slate-950/80 px-2 py-0.5 font-mono text-[10px] text-emerald-300 backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
           {project.status}
@@ -46,7 +46,7 @@ export function ProjectCard({ project, wide = false }: { project: Project; wide?
         {project.stack.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1">
             {project.stack.slice(0, wide ? 5 : 3).map((tech) => (
-              <span key={tech} className="rounded border border-white/10 bg-white/[0.04] px-1.5 py-0.5 font-mono text-[10px] text-slate-400">
+              <span key={tech} className="rounded border border-white/10 bg-white/4 px-1.5 py-0.5 font-mono text-[10px] text-slate-400">
                 {tech}
               </span>
             ))}

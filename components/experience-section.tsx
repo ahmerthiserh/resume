@@ -15,14 +15,14 @@ export function ExperienceSection() {
 
       <div className="relative">
         {/* Glowing timeline spine */}
-        <div className="absolute bottom-0 left-[7px] top-2 w-px bg-gradient-to-b from-blue-500 via-violet-500/60 to-transparent md:left-1/2" />
+        <div className="absolute bottom-0 left-1.75 top-2 w-px bg-linear-to-b from-blue-500 via-violet-500/60 to-transparent md:left-1/2" />
 
         <div className="space-y-10 md:space-y-16">
           {EXPERIENCE.map((item, i) => {
             const right = i % 2 === 1;
             return (
               <div key={item.company} className="relative md:grid md:grid-cols-2 md:gap-14">
-                <span className="absolute left-0 top-7 z-10 h-[15px] w-[15px] rounded-full border-2 border-blue-400 bg-slate-950 shadow-[0_0_0_6px_rgba(59,130,246,0.15),0_0_20px_rgba(59,130,246,0.7)] md:left-1/2 md:-translate-x-1/2" />
+                <span className="absolute left-0 top-7 z-10 h-3.75 w-3.75 rounded-full border-2 border-blue-400 bg-slate-950 shadow-[0_0_0_6px_rgba(59,130,246,0.15),0_0_20px_rgba(59,130,246,0.7)] md:left-1/2 md:-translate-x-1/2" />
 
                 <Reveal
                   delay={80}
@@ -42,14 +42,14 @@ export function ExperienceSection() {
                     <ul className="mt-4 space-y-2.5">
                       {item.achievements.map((a) => (
                         <li key={a} className="flex gap-2.5 text-sm leading-relaxed text-slate-300">
-                          <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
+                          <span className="mt-1.75 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
                           {a}
                         </li>
                       ))}
                     </ul>
                     <div className="mt-5 flex flex-wrap gap-1.5">
                       {item.technologies.map((t) => (
-                        <span key={t} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 font-mono text-[11px] text-slate-400">
+                        <span key={t} className="rounded-md border border-white/10 bg-white/4 px-2 py-0.5 font-mono text-[11px] text-slate-400">
                           {t}
                         </span>
                       ))}

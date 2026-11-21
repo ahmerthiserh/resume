@@ -15,7 +15,7 @@ export function CertificationsSection() {
             <Reveal key={cred.title} delay={i * 70}>
               <TiltCard max={10} className="glass-card h-full p-5">
                 <div className="flex items-start gap-3.5">
-                  <span className="rounded-xl border border-violet-400/20 bg-gradient-to-br from-blue-500/15 to-violet-500/15 p-2.5 text-violet-200">
+                  <span className="rounded-xl border border-violet-400/20 bg-linear-to-br from-blue-500/15 to-violet-500/15 p-2.5 text-violet-200">
                     <Icon className="h-5 w-5" />
                   </span>
                   <div>

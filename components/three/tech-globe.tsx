@@ -95,7 +95,7 @@ export function TechGlobe({ tags }: { tags: string[] }) {
   return (
     <div
       ref={container}
-      className="relative mx-auto aspect-square w-full max-w-[460px] select-none"
+      className="relative mx-auto aspect-square w-full max-w-115 select-none"
       style={{ perspective: "900px" }}
       aria-label="Technologies I work with"
     >
