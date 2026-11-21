@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ahmad Isah — Resume (Technical)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: "IBM Plex Sans", "Liberation Sans", Arial, sans-serif;
+    font-size: 8.9pt; line-height: 1.37; color: #1c2321;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: "IBM Plex Mono", "Liberation Mono", monospace; }
+  .page { width: 210mm; min-height: 297mm; padding: 0; }
+
+  header { background: #0e1716; color: #e8f1ef; padding: 10mm 15mm 8mm; display: flex; justify-content: space-between; align-items: flex-end; gap: 10mm; }
+  header .prompt { font-family: "IBM Plex Mono", monospace; color: #3fbfa5; font-size: 8.5pt; margin-bottom: 3pt; }
+  header h1 { font-size: 26pt; font-weight: 700; letter-spacing: -.3pt; line-height: 1.05; color: #fff; }
+  header .role { color: #9fd9cc; font-weight: 500; font-size: 10pt; margin-top: 4pt; }
+  header .contact { text-align: right; font-family: "IBM Plex Mono", monospace; font-size: 7.9pt; line-height: 1.65; color: #c6d6d2; white-space: nowrap; }
+  header .contact b { color: #3fbfa5; font-weight: 500; }
+
+  .body { padding: 7mm 15mm 0; }
+  section { display: grid; grid-template-columns: 30mm 1fr; gap: 0 6mm; margin-bottom: 7pt; }
+  h2 { font-family: "IBM Plex Mono", monospace; font-size: 8.4pt; font-weight: 600; text-transform: uppercase; letter-spacing: 1pt; color: #148a73; padding-top: 1.5pt; }
+  .content { border-left: .8pt solid #d5e2df; padding-left: 6mm; }
+
+  .entry { margin-bottom: 5.5pt; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
+  .entry-title { font-weight: 700; font-size: 9.8pt; }
+  .entry-title span { font-weight: 500; color: #4b5a57; }
+  .dates { font-family: "IBM Plex Mono", monospace; font-size: 7.9pt; color: #148a73; white-space: nowrap; }
+  .sub { color: #4b5a57; font-size: 8.6pt; }
+  ul { list-style: none; margin-top: 3pt; }
+  li { position: relative; padding-left: 10pt; margin-bottom: .8pt; color: #2c3533; }
+  li::before { content: "›"; position: absolute; left: 1pt; top: -.6pt; color: #148a73; font-weight: 700; }
+  .stack { margin-top: 2pt; display: flex; flex-wrap: wrap; gap: 3pt; }
+  .stack span { font-family: "IBM Plex Mono", monospace; font-size: 7.3pt; color: #0f5e4f; background: #e6f4f0; border-radius: 2pt; padding: .4pt 4pt; }
+
+  .skills { display: grid; grid-template-columns: 27mm 1fr; row-gap: 1pt; }
+  .skills dt { font-weight: 600; }
+  .skills dd { color: #2c3533; }
+
+  .proj p { color: #2c3533; margin-top: 1pt; }
+  .proj .link { font-family: "IBM Plex Mono", monospace; font-size: 7.9pt; color: #148a73; }
+
+  .certs { display: grid; grid-template-columns: 1fr 1fr; gap: 2pt 6mm; }
+  .certs div small { color: #4b5a57; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <div class="prompt">~/ahmad-isah $ whoami</div>
+      <h1>Ahmad Isah</h1>
+      <div class="role">Full-Stack Software Engineer — Mobile, Backend &amp; Payments</div>
+    </div>
+    <div class="contact">
+      <div>Gombe, Nigeria <b>◆</b></div>
+      <div>+234 806 193 9536 <b>◆</b></div>
+      <div><a href="mailto:ahmadisah6293@gmail.com">ahmadisah6293@gmail.com</a> <b>◆</b></div>
+      <div><a href="https://ahmadisah.vercel.app">ahmadisah.vercel.app</a> <b>◆</b></div>
+      <div><a href="https://linkedin.com/in/ahmerthiserh">in/ahmerthiserh</a> · <a href="https://github.com/ahmerthiserh">gh/ahmerthiserh</a> <b>◆</b></div>
+    </div>
+  </header>
+
+  <div class="body">
+    <section>
+      <h2>Profile</h2>
+      <div class="content"><p>Full-stack software engineer building mobile apps, backend services and payment systems with Flutter, Node.js and Laravel. Shipped Mini Mart, a marketplace live on the web, Google Play and the App Store; V Pay, a payment gateway that issues virtual bank accounts and reconciles webhook payments; and an offline-first POS that keeps retail stores selling through internet outages.</p></div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="content">
+        <div class="entry">
+          <div class="entry-head"><div class="entry-title">Software &amp; Product Development Engineer <span>· AWS Global Tech</span></div><div class="dates">2026.04 — now</div></div>
+          <div class="sub">Kano, Nigeria</div>
+          <ul>
+            <li>Built Point-of-Sale (POS) modules in Laravel and PHP for retail operations across multiple store locations.</li>
+            <li>Designed an offline database sync mechanism so cashiers keep processing sales during regional internet outages.</li>
+            <li>Implemented role-based access control and audit logs covering inventory movements, returns and cash ledgers.</li>
+            <li>Built reporting dashboards with date-range filters for revenue trends, cashier performance and inventory turnover.</li>
+          </ul>
+          <div class="stack"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>SQLite sync</span><span>RBAC</span><span>Docker</span></div>
+        </div>
+        <div class="entry">
+          <div class="entry-head"><div class="entry-title">Lead Software Engineer &amp; Technical Co-Founder <span>· Vetris Tech</span></div><div class="dates">2024 — now</div></div>
+          <div class="sub">Remote</div>
+          <ul>
+            <li>Architected and shipped multi-tenant commerce and mobile banking services, maintaining 99.9% uptime through peak transaction periods.</li>
+            <li>Built and launched Mini Mart on the web, Google Play and the App Store with Flutter and Node.js, including real-time catalog search, merchant verification and offline-first caching.</li>
+            <li>Built the V Pay API gateway: automated virtual bank account issuance and real-time webhook reconciliation using idempotency keys to prevent duplicate transactions.</li>
+          </ul>
+          <div class="stack"><span>Flutter</span><span>Dart</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span><span>Paystack</span></div>
+        </div>
+        <div class="entry">
+          <div class="entry-head"><div class="entry-title">Full-Stack Developer Intern <span>· Briatek Computers Nigeria Ltd</span></div><div class="dates">2022 — 2026.04</div></div>
+          <div class="sub">Gombe, Nigeria</div>
+          <ul>
+            <li>Built and maintained business web applications with Laravel, MySQL and JavaScript.</li>
+            <li>Optimized SQL queries and database schemas to cut response times on high-volume reporting endpoints.</li>
+            <li>Integrated utility APIs, payment endpoints and automated notification services into client platforms.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="content">
+        <div class="entry proj">
+          <div class="entry-head"><div class="entry-title">Mini Mart</div><a class="link" href="https://minimart.vetristech.com/">minimart.vetristech.com</a></div>
+          <p>Marketplace with location-based merchant discovery, cart and multi-channel checkout. Live on the web, Google Play and the App Store.</p>
+        </div>
+        <div class="entry proj">
+          <div class="entry-head"><div class="entry-title">SalesRepAnalytics</div><a class="link" href="https://salesrepanalytics.com/">salesrepanalytics.com</a></div>
+          <p>Sales performance platform with rep tracking, commission calculation, pipeline forecasting and role-based dashboards. Next.js, TypeScript, Node.js, PostgreSQL.</p>
+        </div>
+        <div class="entry proj">
+          <div class="entry-head"><div class="entry-title">V Pay &amp; FluxBills</div><span class="link" style="color:#4b5a57">private repo</span></div>
+          <p>Payment and bill-payment API: virtual bank accounts, wallet settlements and idempotent webhook processing. Node.js, Laravel, MySQL, Redis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="content">
+        <dl class="skills">
+          <dt>Mobile</dt><dd>Flutter, Dart, React Native, offline data sync</dd>
+          <dt>Backend</dt><dd>Node.js, Express, PHP, Laravel, REST APIs, webhooks</dd>
+          <dt>Web frontend</dt><dd>Next.js, React, TypeScript, Tailwind CSS</dd>
+          <dt>Data &amp; DevOps</dt><dd>PostgreSQL, MySQL, Redis, MongoDB, Docker, Git, CI/CD</dd>
+          <dt>Payments</dt><dd>Paystack, Flutterwave, Stripe, idempotent webhooks, OAuth2, JWT</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section>
+      <h2>Credentials</h2>
+      <div class="content certs">
+        <div>Meta Back-End Developer <small>· Coursera 2023</small></div>
+        <div>Meta Front-End Developer <small>· Coursera 2023</small></div>
+        <div>Database Structures with MySQL <small>· Coursera 2023</small></div>
+        <div>Career Essentials in Software Dev <small>· MS 2024</small></div>
+        <div>SSCE <small>· NECO</small></div>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

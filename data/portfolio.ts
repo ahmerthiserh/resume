@@ -20,10 +20,12 @@ export interface Project {
   actionText: string;
   links?: ExternalLinkItem[];
   status: string;
-  architectureOverview: string;
-  highlights: string[];
-  detailedStack: DetailedTechStack[];
-  externalLinks: ExternalLinkItem[];
+  /** Extra line under the summary, e.g. related products. */
+  note?: string;
+  architectureOverview?: string;
+  highlights?: string[];
+  detailedStack?: DetailedTechStack[];
+  externalLinks?: ExternalLinkItem[];
 }
 
 export interface ExperienceItem {
@@ -49,18 +51,39 @@ export interface CredentialItem {
 
 export const PROFILE_DATA = {
   name: "Ahmad Isah",
-  title: "Full-Stack Software Engineer | Mobile & Cloud Architecture",
+  title: "Full-Stack Software Engineer | Mobile, Backend & Payments",
   availability: "Available for Contract & Remote Engagements",
-  bio: "Full-Stack Software Engineer with proven experience architecting, building, and launching full-cycle mobile and cloud-based applications. Engineering lead behind multi-platform commerce, fintech, and offline-first POS systems across West Africa. Specialized in building fault-tolerant backend services (Node.js, Laravel), responsive cross-platform mobile apps (Flutter, React Native), and high-concurrency payment integrations with automated reconciliation.",
-  location: "Gombe, Nigeria (Operating in GMT+1 / Nigeria · Europe overlap)",
+  bio: "Full-stack software engineer building mobile apps, backend services and payment systems with Flutter, Node.js and Laravel. Shipped Mini Mart, a marketplace live on the web, Google Play and the App Store; V Pay, a payment gateway that issues virtual bank accounts and reconciles webhook payments; and an offline-first POS that keeps retail stores selling through internet outages.",
+  location: "Gombe, Nigeria · GMT+1 (overlaps with Europe)",
   phone: "+2348061939536",
+  phoneDisplay: "+234 806 193 9536",
   email: "ahmadisah6293@gmail.com",
   resumePath: "/CV.pdf",
   linkedin: "https://linkedin.com/in/ahmerthiserh",
   github: "https://github.com/ahmerthiserh",
 };
 
+export interface Highlight {
+  value: number;
+  from?: number;
+  decimals?: number;
+  suffix?: string;
+  label: string;
+  detail: string;
+}
+
+export const HIGHLIGHTS: Highlight[] = [
+  { value: 15, suffix: "+", label: "Products built & launched", detail: "Web platforms and iOS/Android apps" },
+  { value: 10, label: "Apps on Google Play", detail: "4 also on the Apple App Store" },
+  { value: 99.9, from: 90, decimals: 1, suffix: "%", label: "Platform uptime", detail: "Commerce & banking services at Vetris Tech" },
+  { value: 2022, from: 2010, label: "Building software since", detail: "Gombe · Kano · Remote" },
+];
+
 export const TECHNICAL_STACK: SkillCategory[] = [
+  {
+    title: "Web Frontend",
+    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  },
   {
     title: "Mobile Development",
     skills: [
@@ -161,35 +184,77 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "v-pay",
-    title: "V Pay & FluxBills (FinTech & Utility API Gateway)",
-    role: "Fintech Systems Architect",
+    title: "V Pay",
+    role: "Built at Vetris Tech · Fintech",
     summary:
-      "API-driven payment engine handling automated virtual bank account issuance, instant wallet settlements, and bill payment endpoints. Built with strict idempotency keys to eliminate duplicate transactions under network latency drops.",
+      "Payment infrastructure for businesses: automated virtual account generation, instant deposit confirmation and merchant settlements with low fees.",
     stack: ["Node.js", "Laravel", "MySQL", "Redis", "Webhooks"],
-    image: "/projects/pay.png",
-    live: "https://github.com/ahmerthiserh",
-    actionText: "Core Repo ↗",
-    status: "Enterprise API / Production",
-    architectureOverview:
-      "Architected an API-first multi-tenant financial transaction engine that issues automated dynamic virtual bank accounts and processes real-time utility billings. Designed a distributed Redis-queued event processing pipeline with strict database row-level locking to guarantee idempotent webhook settlements and eliminate duplicate debits during gateway timeouts.",
-    highlights: [
-      "Idempotent webhook reconciliation protocol guaranteeing zero duplicate disbursements across high-concurrency payment streams.",
-      "Asynchronous Redis BullMQ worker pipelines decoupling webhook ingestion from transaction ledger writing.",
-      "ACID-compliant double-entry ledger bookkeeping with automated cryptographic audit logs.",
+    image: "/projects/vpay.jpg",
+    live: "https://pay.vetristech.com/",
+    actionText: "Web Platform ↗",
+    links: [{ label: "Web Platform ↗", url: "https://pay.vetristech.com/" }],
+    status: "Live web platform",
+  },
+  {
+    id: "fluxbills",
+    title: "Fluxbills",
+    role: "Built at Vetris Tech · Utilities",
+    summary:
+      "Utility payments platform and API: multi-network airtime and data bundles, cable TV renewals, exam PINs and automated electricity token generation.",
+    stack: ["Node.js", "Laravel", "MySQL", "REST APIs"],
+    image: "/projects/fluxbills.jpg",
+    live: "https://bills.vetristech.com/",
+    actionText: "Web Platform ↗",
+    links: [{ label: "Web Platform ↗", url: "https://bills.vetristech.com/" }],
+    status: "Live web platform",
+  },
+  {
+    id: "zamtake-data-link",
+    title: "Zamtake Data Link",
+    role: "Client platform · Telecom",
+    summary:
+      "Retail digital services platform for automated data bundle purchases, airtime recharges and utility bill payments, on the web and in iOS and Android apps.",
+    note: "One of several data and airtime (VTU) platforms I've built, alongside V-DATA, AY Data Station, Mbela Sub, Shalele Data Plug and Futuhi Data Sub.",
+    stack: [],
+    image: "/projects/zamtake.jpg",
+    live: "https://zamtakedatalink.com/",
+    actionText: "Web App ↗",
+    links: [
+      { label: "Web App ↗", url: "https://zamtakedatalink.com/" },
+      { label: "Google Play ↗", url: "https://play.google.com/store/apps/details?id=com.zamtakedatalink.app2" },
+      { label: "App Store ↗", url: "https://apps.apple.com/us/app/zamtake-data-link/id6768110173" },
     ],
-    detailedStack: [
-      { category: "Backend & Framework", items: ["Node.js", "Laravel 11", "PHP 8.3"] },
-      { category: "Cache & Message Broker", items: ["Redis", "BullMQ / Horizon"] },
-      { category: "Data Layer", items: ["MySQL (InnoDB)", "Read Replicas"] },
-      { category: "Protocols & Security", items: ["HMAC Webhooks", "Idempotency Keys", "mTLS", "Docker"] },
+    status: "Live on Web, Play Store & App Store",
+  },
+  {
+    id: "vem",
+    title: "Vem",
+    role: "Built at Vetris Tech · Fashion marketplace",
+    summary:
+      "Marketplace for premium fabrics, traditional clothing and fashion accessories, bringing trusted sellers and buyers together on the web and mobile.",
+    stack: [],
+    image: "/projects/vem.jpg",
+    live: "https://vem.vetristech.com/",
+    actionText: "Web App ↗",
+    links: [
+      { label: "Web App ↗", url: "https://vem.vetristech.com/" },
+      { label: "Google Play ↗", url: "https://play.google.com/store/apps/details?id=vem.vetristech.com" },
+      { label: "App Store ↗", url: "https://apps.apple.com/app/vem/id6798015280" },
     ],
-    externalLinks: [
-      {
-        label: "GitHub / Case Study ↗",
-        url: "https://github.com/ahmerthiserh",
-        isPrimary: true,
-      },
-    ],
+    status: "Live on Web, Play Store & App Store",
+  },
+  {
+    id: "hisbah-command-gombe",
+    title: "Hisbah Command Gombe",
+    role: "Enterprise client system · Public sector",
+    summary:
+      "Administrative platform for the Gombe State Hisbah Command: digital case logging, officer deployment directory and command oversight.",
+    stack: [],
+    image: "/projects/hisbah.jpg",
+    live: "https://hisbahcommandgombe.com/",
+    actionText: "Website ↗",
+    links: [{ label: "Website ↗", url: "https://hisbahcommandgombe.com/" }],
+    status: "Live",
   },
   {
     id: "sales-rep-analytics",
@@ -240,20 +305,89 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const EXPERIENCE: ExperienceItem[] = [
+export interface MobileApp {
+  id: string;
+  name: string;
+  category: string;
+  summary: string;
+  icon: string;
+  screenshot: string;
+  playStore?: string;
+  appStore?: string;
+}
+
+/** Apps published under the Vetris Tech developer account. Data/VTU apps are represented by Zamtake only. */
+export const MOBILE_APPS: MobileApp[] = [
   {
-    company: "Vetris Tech",
-    location: "Remote / Nigeria",
-    role: "Lead Software Engineer & Technical Co-Founder",
-    period: "2024 — Present",
-    achievements: [
-      "Architected and shipped multi-tenant commerce and mobile banking services, achieving 99.9% platform uptime across high-concurrency transaction periods.",
-      "Built and launched the Mini Mart multi-platform commerce ecosystem across Web, Google Play, and the App Store using Flutter and Node.js.",
-      "Implemented real-time catalog search, localized merchant verification, and offline-first client-side data caching.",
-      "Engineered the V Pay API gateway, automating virtual bank account generation and real-time webhook payment reconciliations with zero-downtime ledger consistency.",
-    ],
-    technologies: ["Flutter", "Dart", "Node.js", "PostgreSQL", "Hive", "Redis", "Paystack"],
+    id: "mini-mart",
+    name: "Mini Mart",
+    category: "Marketplace",
+    summary: "Multi-vendor marketplace connecting buyers with verified market stores, local sellers and online businesses.",
+    icon: "/apps/minimart-icon.png",
+    screenshot: "/apps/minimart.jpg",
+    playStore: "https://play.google.com/store/apps/details?id=minimart.vetristech.com",
+    appStore: "https://apps.apple.com/app/mini-mart-marketplace/id6804913345",
   },
+  {
+    id: "zamtake-data-link",
+    name: "Zamtake Data Link",
+    category: "Telecom · Data & airtime",
+    summary: "Buy data bundles and airtime, and pay cable TV and electricity bills instantly from a wallet.",
+    icon: "/apps/zamtake-icon.png",
+    screenshot: "/apps/zamtake.jpg",
+    playStore: "https://play.google.com/store/apps/details?id=com.zamtakedatalink.app2",
+    appStore: "https://apps.apple.com/us/app/zamtake-data-link/id6768110173",
+  },
+  {
+    id: "vem",
+    name: "VEM",
+    category: "Fashion marketplace",
+    summary: "Shop premium fabrics, traditional clothing, caps and fashion accessories from trusted sellers.",
+    icon: "/apps/vem-icon.png",
+    screenshot: "/apps/vem.jpg",
+    playStore: "https://play.google.com/store/apps/details?id=vem.vetristech.com",
+    appStore: "https://apps.apple.com/app/vem/id6798015280",
+  },
+  {
+    id: "mazaf-ecommerce",
+    name: "Mazaf Ecommerce",
+    category: "E-commerce · Client app",
+    summary: "Official shopping app of Mazaf Mini Depot: groceries, beverages, household and personal care products across Nigeria.",
+    icon: "/apps/mazaf-icon.png",
+    screenshot: "/apps/mazaf.jpg",
+    playStore: "https://play.google.com/store/apps/details?id=com.mazafecommerce.app",
+    appStore: "https://apps.apple.com/us/app/mazaf-e-commerce/id6798672639",
+  },
+  {
+    id: "unimate",
+    name: "UniMate",
+    category: "Education · Finance",
+    summary: "Student companion for planning lectures, coursework and deadlines, and managing a student budget.",
+    icon: "/apps/unimate-icon.png",
+    screenshot: "/apps/unimate.jpg",
+    playStore: "https://play.google.com/store/apps/details?id=com.vetristech.UniMate",
+  },
+  {
+    id: "ludora",
+    name: "Ludora",
+    category: "Game",
+    summary: "A colourful Ludo game with smart bots, pass-and-play with friends and online matches.",
+    icon: "/apps/ludora-icon.png",
+    screenshot: "/apps/ludora.jpg",
+    playStore: "https://play.google.com/store/apps/details?id=com.acem702.ludora",
+  },
+  {
+    id: "status-saver",
+    name: "Status Saver",
+    category: "Utility",
+    summary: "Save WhatsApp status videos and images to your phone in one tap.",
+    icon: "/apps/statussaver-icon.png",
+    screenshot: "/apps/statussaver.jpg",
+    playStore: "https://play.google.com/store/apps/details?id=com.vetristech.statussaver",
+  },
+];
+
+export const EXPERIENCE: ExperienceItem[] = [
   {
     company: "AWS Global Tech",
     location: "Kano, Nigeria",
@@ -266,6 +400,19 @@ export const EXPERIENCE: ExperienceItem[] = [
       "Engineered real-time reporting dashboards with date-range metrics to monitor revenue trends, cashier performance, and inventory velocity.",
     ],
     technologies: ["Laravel", "PHP", "MySQL", "SQLite Sync", "RBAC", "Docker", "REST APIs"],
+  },
+  {
+    company: "Vetris Tech",
+    location: "Remote / Nigeria",
+    role: "Lead Software Engineer & Technical Co-Founder",
+    period: "2024 — Present",
+    achievements: [
+      "Architected and shipped multi-tenant commerce and mobile banking services, achieving 99.9% platform uptime across high-concurrency transaction periods.",
+      "Built and launched the Mini Mart multi-platform commerce ecosystem across Web, Google Play, and the App Store using Flutter and Node.js.",
+      "Implemented real-time catalog search, localized merchant verification, and offline-first client-side data caching.",
+      "Engineered the V Pay API gateway, automating virtual bank account generation and real-time webhook payment reconciliations with zero-downtime ledger consistency.",
+    ],
+    technologies: ["Flutter", "Dart", "Node.js", "PostgreSQL", "Hive", "Redis", "Paystack"],
   },
   {
     company: "Briatek Computers Nigeria Limited",

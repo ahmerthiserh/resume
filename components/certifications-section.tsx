@@ -1,54 +1,33 @@
 import { Award, GraduationCap } from "lucide-react";
 import { CREDENTIALS } from "@/data/portfolio";
+import { SectionHeading } from "@/components/section-heading";
+import { Reveal } from "@/components/motion/reveal";
+import { TiltCard } from "@/components/motion/tilt-card";
 
 export function CertificationsSection() {
   return (
-    <section className="space-y-6">
-      <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
-        <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-blue-400 font-mono">
-            Certifications & Education
-          </h2>
-          <p className="text-xs text-slate-400 mt-0.5">
-            Verified technical specializations, professional credentials, and formal qualifications
-          </p>
-        </div>
-        <span className="text-xs font-mono text-slate-500 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">
-          {CREDENTIALS.length} Credentials
-        </span>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {CREDENTIALS.map((cred) => {
-          const isEdu = cred.type === "education";
-          const Icon = isEdu ? GraduationCap : Award;
-
+    <section id="certifications" className="mx-auto max-w-6xl scroll-mt-24 px-5 sm:px-8">
+      <SectionHeading index="05" eyebrow="Credentials" title="Certifications & education" />
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {CREDENTIALS.map((cred, i) => {
+          const Icon = cred.type === "education" ? GraduationCap : Award;
           return (
-            <div
-              key={cred.title}
-              className="relative rounded-xl border border-slate-800/90 bg-slate-900/60 backdrop-blur-md p-4.5 hover:border-blue-500/40 transition-all duration-300 group shadow-md shadow-slate-950/40"
-            >
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-blue-950/60 border border-blue-800/40 text-blue-400 group-hover:text-blue-300 transition-colors shrink-0 mt-0.5">
-                  <Icon className="w-4 h-4" />
-                </div>
-
-                <div className="min-w-0 flex-1">
-                  <h3 className="font-semibold text-white text-sm tracking-tight leading-snug group-hover:text-blue-300 transition-colors">
-                    {cred.title}
-                  </h3>
-                  <div className="flex items-center gap-2 mt-1 text-xs text-slate-400 font-mono">
-                    <span className="text-slate-300 font-medium">{cred.issuer}</span>
-                    {cred.year && (
-                      <>
-                        <span className="text-slate-600">•</span>
-                        <span className="text-blue-400">{cred.year}</span>
-                      </>
-                    )}
+            <Reveal key={cred.title} delay={i * 70}>
+              <TiltCard max={10} className="glass-card h-full p-5">
+                <div className="flex items-start gap-3.5">
+                  <span className="rounded-xl border border-violet-400/20 bg-gradient-to-br from-blue-500/15 to-violet-500/15 p-2.5 text-violet-200">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-semibold leading-snug text-white">{cred.title}</h3>
+                    <p className="mt-1.5 font-mono text-xs text-slate-400">
+                      {cred.issuer}
+                      {cred.year && <span className="text-blue-400"> · {cred.year}</span>}
+                    </p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </TiltCard>
+            </Reveal>
           );
         })}
       </div>

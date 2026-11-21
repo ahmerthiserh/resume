@@ -1,66 +1,65 @@
 import { EXPERIENCE } from "@/data/portfolio";
-import { CheckCircle2 } from "lucide-react";
+import { SectionHeading } from "@/components/section-heading";
+import { Reveal } from "@/components/motion/reveal";
+import { TiltCard } from "@/components/motion/tilt-card";
 
 export function ExperienceSection() {
   return (
-    <section className="space-y-6">
-      <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
-        <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-blue-400 font-mono">
-            Professional Work Experience
-          </h2>
-          <p className="text-xs text-slate-400 mt-0.5">
-            Engineering leadership, production uptime metrics, and core backend architectures
-          </p>
-        </div>
-        <span className="text-xs font-mono text-slate-500 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">
-          2022 — Present
-        </span>
-      </div>
+    <section id="experience" className="mx-auto max-w-6xl scroll-mt-24 px-5 sm:px-8">
+      <SectionHeading
+        index="03"
+        eyebrow="Experience"
+        title="Where I've worked"
+        subtitle="Point-of-sale software for retail, a commerce and fintech startup I co-founded, and four years building business web apps."
+      />
 
-      <div className="relative pl-6 border-l-2 border-slate-800/80 space-y-12 ml-2">
-        {EXPERIENCE.map((item, index) => (
-          <div key={item.company + index} className="relative group">
-            {/* Glowing Blue Timeline Node */}
-            <span className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-blue-500 ring-4 ring-blue-500/20 shadow-sm shadow-blue-500/50 group-hover:scale-125 transition-transform duration-200" />
+      <div className="relative">
+        {/* Glowing timeline spine */}
+        <div className="absolute bottom-0 left-[7px] top-2 w-px bg-gradient-to-b from-blue-500 via-violet-500/60 to-transparent md:left-1/2" />
 
-            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-              <div>
-                <h3 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
-                  {item.role}
-                </h3>
-                <p className="text-sm font-semibold text-blue-400 font-mono mt-0.5">
-                  {item.company} <span className="text-slate-600 font-normal">|</span> <span className="text-slate-400 font-normal">{item.location}</span>
-                </p>
-              </div>
-              <span className="text-xs font-mono text-slate-400 bg-slate-900/80 border border-slate-800/80 px-2.5 py-1 rounded-md">
-                {item.period}
-              </span>
-            </div>
+        <div className="space-y-10 md:space-y-16">
+          {EXPERIENCE.map((item, i) => {
+            const right = i % 2 === 1;
+            return (
+              <div key={item.company} className="relative md:grid md:grid-cols-2 md:gap-14">
+                <span className="absolute left-0 top-7 z-10 h-[15px] w-[15px] rounded-full border-2 border-blue-400 bg-slate-950 shadow-[0_0_0_6px_rgba(59,130,246,0.15),0_0_20px_rgba(59,130,246,0.7)] md:left-1/2 md:-translate-x-1/2" />
 
-            {/* Exact Bullet Achievements from CV */}
-            <ul className="mt-3.5 space-y-2 text-sm">
-              {item.achievements.map((achievement, idx) => (
-                <li key={idx} className="flex items-start gap-2.5 text-slate-300 leading-relaxed">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-1" />
-                  <span>{achievement}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Stack Pills */}
-            <div className="flex flex-wrap gap-1.5 mt-4">
-              {item.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="text-[11px] font-mono bg-slate-950/90 border border-slate-800/90 text-slate-300 px-2.5 py-0.5 rounded-md"
+                <Reveal
+                  delay={80}
+                  className={`pl-8 md:pl-0 ${right ? "md:col-start-2" : "md:col-start-1 md:text-right"}`}
                 >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+                  <p className="pt-5 font-mono text-sm font-semibold text-blue-400">{item.period}</p>
+                  <p className="mt-1 text-sm text-slate-500">{item.location}</p>
+                </Reveal>
+
+                <Reveal
+                  delay={160}
+                  className={`mt-3 pl-8 md:mt-0 md:pl-0 ${right ? "md:col-start-1 md:row-start-1" : "md:col-start-2"}`}
+                >
+                  <TiltCard max={6} className="glass-card p-6 sm:p-7">
+                    <h3 className="text-xl font-bold tracking-tight text-white">{item.role}</h3>
+                    <p className="mt-1 font-semibold text-blue-300">{item.company}</p>
+                    <ul className="mt-4 space-y-2.5">
+                      {item.achievements.map((a) => (
+                        <li key={a} className="flex gap-2.5 text-sm leading-relaxed text-slate-300">
+                          <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
+                          {a}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-5 flex flex-wrap gap-1.5">
+                      {item.technologies.map((t) => (
+                        <span key={t} className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 font-mono text-[11px] text-slate-400">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </TiltCard>
+                </Reveal>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

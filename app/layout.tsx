@@ -14,8 +14,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ahmad Isah — Full-Stack Software Engineer",
+  metadataBase: new URL("https://ahmadisah.vercel.app"),
+  openGraph: {
+    title: "Ahmad Isah — Full-Stack Software Engineer",
+    description: "Mobile apps, backend services and payment systems with Flutter, Node.js and Laravel.",
+    type: "website",
+  },
   description:
-    "Full-Stack Software Engineer specializing in cross-platform mobile systems (Flutter) and scalable backend/payment architectures (Node.js, Laravel).",
+    "Full-stack software engineer building mobile apps (Flutter), backend services (Node.js, Laravel) and payment systems.",
 };
 
 export default function RootLayout({
