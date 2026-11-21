@@ -28,7 +28,16 @@ Most of these were built at [Vetris Tech](https://vetristech.com/products), as i
 - **[Zamtake Data Link](https://zamtakedatalink.com/)**: a data, airtime and bills platform on the web, Android and iOS. It's one of several data (VTU) platforms built, along with V-DATA, AY Data Station, Mbela Sub, Shalele Data Plug and Futuhi Data Sub.
 - **[Vem](https://vem.vetristech.com/)**: AI agent orchestration and product telemetry dashboards, on the web, Android and iOS.
 - **[Hisbah Command Gombe](https://hisbahcommandgombe.com/)**: an administrative platform for a state public-safety command.
+
+
+### Freelance & subcontracted work
+
+Built or contributed to through agencies and partners, rather than directly for the end client.
+
+- **[DigiCollegePro](https://collegepro.digisoft.com.ng)**: a multi-campus higher education ERP covering admissions, course registration, CGPA results, fees and transcripts.
+- **[DigiSmartSave](https://digismartsave.digisoft.com.ng)**: an interest-free savings and finance cooperative platform.
 - **[SalesRepAnalytics](https://salesrepanalytics.com/)**: a platform that tracks sales performance, commissions and forecasts.
+- **[AGILE Adamawa Management Portal](https://adamawaagilecct.org.ng)**: enrollment, attendance and grant payments for a state girls' education programme (as a contributor).
 
 ### Mobile apps
 

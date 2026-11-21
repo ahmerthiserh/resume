@@ -8,6 +8,7 @@ import { SkillsSection } from "@/components/skills-section";
 import { CertificationsSection } from "@/components/certifications-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { buildJsonLd } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -19,6 +20,10 @@ export default function Home() {
         <div className="absolute bottom-0 right-[-10%] h-[500px] w-[500px] rounded-full bg-violet-700/10 blur-[140px]" />
       </div>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd()).replace(/</g, "\\u003c") }}
+      />
       <SiteNav />
       <div className="relative z-10 space-y-28 sm:space-y-36">
         <HeroSection />

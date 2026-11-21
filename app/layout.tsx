@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "@/lib/site";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,15 +14,55 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ahmad Isah — Full-Stack Software Engineer",
-  metadataBase: new URL("https://ahmadisah.vercel.app"),
-  openGraph: {
-    title: "Ahmad Isah — Full-Stack Software Engineer",
-    description: "Mobile apps, backend services and payment systems with Flutter, Node.js and Laravel.",
-    type: "website",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: "%s | Ahmad Isah",
   },
-  description:
-    "Full-stack software engineer building mobile apps (Flutter), backend services (Node.js, Laravel) and payment systems.",
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  applicationName: "Ahmad Isah",
+  authors: [{ name: "Ahmad Isah", url: SITE_URL }],
+  creator: "Ahmad Isah",
+  publisher: "Ahmad Isah",
+  category: "technology",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    url: SITE_URL,
+    siteName: "Ahmad Isah",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    locale: "en_NG",
+    firstName: "Ahmad",
+    lastName: "Isah",
+    username: "ahmerthiserh",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  // Paste the code from Google Search Console into this env var on Vercel to verify ownership.
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
+};
+
+export const viewport: Viewport = {
+  themeColor: "#030712",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({

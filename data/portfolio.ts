@@ -22,6 +22,10 @@ export interface Project {
   status: string;
   /** Extra line under the summary, e.g. related products. */
   note?: string;
+  /** "freelance" = built as a subcontractor, not directly for the end client. */
+  group?: "freelance";
+  /** Spans two grid columns on large screens. */
+  wide?: boolean;
   architectureOverview?: string;
   highlights?: string[];
   detailedStack?: DetailedTechStack[];
@@ -132,6 +136,7 @@ export const TECHNICAL_STACK: SkillCategory[] = [
 export const PROJECTS: Project[] = [
   {
     id: "mini-mart",
+    wide: true,
     title: "Mini Mart (Multi-Platform Commerce Ecosystem)",
     role: "Lead Engineer & Co-Founder",
     summary:
@@ -245,6 +250,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "hisbah-command-gombe",
+    wide: true,
     title: "Hisbah Command Gombe",
     role: "Enterprise client system · Public sector",
     summary:
@@ -259,7 +265,8 @@ export const PROJECTS: Project[] = [
   {
     id: "sales-rep-analytics",
     title: "SalesRepAnalytics",
-    role: "Lead Engineer & Full-Stack Architect",
+    role: "Freelance · subcontracted",
+    group: "freelance",
     summary:
       "Enterprise sales performance and revenue intelligence platform. Automates sales representative tracking, multi-tier commission calculations, pipeline forecasting, and real-time KPI visualization across distributed sales teams.",
     stack: [
@@ -302,6 +309,48 @@ export const PROJECTS: Project[] = [
         isPrimary: false,
       },
     ],
+  },
+  {
+    id: "digicollegepro",
+    title: "DigiCollegePro",
+    role: "Freelance · subcontracted",
+    group: "freelance",
+    summary:
+      "Multi-campus higher education ERP: admissions, faculties, course registration, 5.0 CGPA results, bursary fees and senate broadsheets, with 6 role-based dashboards and transcripts printed on the school's letterhead.",
+    stack: [],
+    image: "/projects/collegepro.jpg",
+    live: "https://collegepro.digisoft.com.ng",
+    actionText: "Live Platform ↗",
+    links: [{ label: "Live Platform ↗", url: "https://collegepro.digisoft.com.ng" }],
+    status: "Live platform",
+  },
+  {
+    id: "digismartsave",
+    title: "DigiSmartSave (Micro Credit)",
+    role: "Freelance · subcontracted",
+    group: "freelance",
+    summary:
+      "Interest-free savings and finance cooperative platform: goal-based savings, Murabaha and Ijara asset financing, and profit-sharing investment pools, with every cost shown upfront.",
+    stack: [],
+    image: "/projects/digismartsave.jpg",
+    live: "https://digismartsave.digisoft.com.ng",
+    actionText: "Live Platform ↗",
+    links: [{ label: "Live Platform ↗", url: "https://digismartsave.digisoft.com.ng" }],
+    status: "Live platform",
+  },
+  {
+    id: "agile-adamawa",
+    title: "AGILE Adamawa Management Portal",
+    role: "Freelance · contributor",
+    group: "freelance",
+    summary:
+      "Portal for the AGILE girls' education programme in Adamawa State: enrollment, weekly attendance, grant payments, caregiver records and multi-level data validation for 145,000+ beneficiaries in 4,000+ schools.",
+    stack: [],
+    image: "/projects/agilecct.jpg",
+    live: "https://adamawaagilecct.org.ng",
+    actionText: "Portal ↗",
+    links: [{ label: "Portal ↗", url: "https://adamawaagilecct.org.ng" }],
+    status: "Live · government programme",
   },
 ];
 

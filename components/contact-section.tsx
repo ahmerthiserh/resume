@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { PROFILE_DATA } from "@/data/portfolio";
 import { Reveal } from "@/components/motion/reveal";
@@ -10,6 +11,12 @@ export function ContactSection() {
           <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-600/30 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-violet-600/30 blur-3xl" />
 
+          <div className="relative mx-auto mb-6 w-fit" style={{ perspective: "600px" }}>
+            <div className="avatar-orbit relative rounded-full bg-gradient-to-br from-blue-400 via-violet-500 to-cyan-400 p-[3px] shadow-2xl shadow-blue-600/40">
+              <Image src="/ahmad-isah-avatar.webp" alt="Ahmad Isah" width={96} height={96} className="h-24 w-24 rounded-full object-cover" />
+            </div>
+            <span className="absolute bottom-1 right-1 h-4 w-4 rounded-full border-2 border-slate-900 bg-emerald-400" />
+          </div>
           <p className="relative font-mono text-xs uppercase tracking-[0.25em] text-blue-300">06 · Contact</p>
           <h2 className="relative mx-auto mt-4 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-5xl">
             Have a product to build? <span className="text-gradient-hero">Let&apos;s talk.</span>
