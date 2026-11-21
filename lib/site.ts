@@ -41,7 +41,13 @@ export function buildJsonLd() {
         jobTitle: "Full-Stack Software Engineer",
         description: SITE_DESCRIPTION,
         url: SITE_URL,
-        image: `${SITE_URL}/opengraph-image`,
+        image: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/ahmad-isah.jpg`,
+          width: 800,
+          height: 1000,
+          caption: "Ahmad Isah, full-stack software engineer",
+        },
         email: `mailto:${PROFILE_DATA.email}`,
         telephone: PROFILE_DATA.phone,
         address: {

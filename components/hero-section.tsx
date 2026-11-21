@@ -1,6 +1,6 @@
 import { ArrowDown, FileDown, Mail, MapPin } from "lucide-react";
 import { PROFILE_DATA } from "@/data/portfolio";
-import { HeroCanvas } from "@/components/three/hero-canvas";
+import { Portrait3D } from "@/components/three/portrait-3d";
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -23,12 +23,12 @@ export function HeroSection() {
 
   return (
     <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
-      {/* 3D scene: right side on desktop, faint background on mobile */}
-      <div className="pointer-events-none absolute inset-0 top-1/3 opacity-25 sm:top-0 sm:opacity-40 lg:left-[46%] lg:opacity-100">
-        <HeroCanvas />
-      </div>
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+        {/* 3D portrait: above the text on mobile, right column on desktop */}
+        <div className="hero-in order-first px-8 sm:px-12 lg:order-last lg:px-6" style={{ animationDelay: "120ms" }}>
+          <Portrait3D />
+        </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <span className="hero-in inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-medium text-emerald-300 backdrop-blur">
             <span className="relative flex h-2 w-2">
