@@ -1,65 +1,59 @@
-import { Smartphone, Server, Database, ShieldCheck, Terminal } from "lucide-react";
+import { Smartphone, Server, Database, ShieldCheck, Terminal, Monitor } from "lucide-react";
 import { TECHNICAL_STACK } from "@/data/portfolio";
+import { SectionHeading } from "@/components/section-heading";
+import { Reveal } from "@/components/motion/reveal";
+import { TechGlobe } from "@/components/three/tech-globe";
 
 const CATEGORY_ICONS: Record<string, typeof Terminal> = {
+  "Web Frontend": Monitor,
   "Mobile Development": Smartphone,
   "Backend & APIs": Server,
   "Databases & Cloud": Database,
   "FinTech & Integrations": ShieldCheck,
 };
 
+// Short names for the globe; long labels like "Payment Gateways (...)" are split up.
+const GLOBE_TAGS = Array.from(
+  new Set(
+    TECHNICAL_STACK.flatMap((c) => c.skills)
+      .flatMap((s) => (s.startsWith("Payment Gateways") ? ["Paystack", "Flutterwave", "Stripe"] : [s]))
+      .filter((s) => s.length <= 22)
+  )
+);
+
 export function SkillsSection() {
   return (
-    <section className="space-y-6">
-      <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
-        <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-blue-400 font-mono">
-            Technical Stack Matrix
-          </h2>
-          <p className="text-xs text-slate-400 mt-0.5">
-            Core production proficiencies directly synchronized with official CV
-          </p>
-        </div>
-        <span className="text-xs font-mono text-slate-500 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">
-          {TECHNICAL_STACK.length} Domains
-        </span>
-      </div>
+    <section id="skills" className="mx-auto max-w-6xl scroll-mt-24 px-5 sm:px-8">
+      <SectionHeading
+        index="03"
+        eyebrow="Toolbox"
+        title="Technologies I use"
+        subtitle="From mobile clients to payment back ends. Move your mouse over the globe to spin it."
+      />
 
-      {/* Modern 2x2 Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {TECHNICAL_STACK.map((category) => {
-          const Icon = CATEGORY_ICONS[category.title] || Terminal;
-          return (
-            <div
-              key={category.title}
-              className="relative rounded-2xl border border-slate-800/90 bg-slate-900/60 backdrop-blur-md p-6 hover:border-blue-500/50 transition-all duration-300 group overflow-hidden shadow-lg shadow-slate-950/40"
-            >
-              {/* Glowing Top Gradient Accent */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 group-hover:via-blue-400 transition-colors" />
+      <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
+        <Reveal>
+          <TechGlobe tags={GLOBE_TAGS} />
+        </Reveal>
 
-              <div className="flex items-center gap-2.5 mb-4">
-                <div className="p-2 rounded-lg bg-blue-950/60 border border-blue-800/40 text-blue-400 group-hover:text-blue-300 transition-colors">
-                  <Icon className="w-4 h-4" />
+        <div className="grid gap-3 sm:grid-cols-2">
+          {TECHNICAL_STACK.map((category, i) => {
+            const Icon = CATEGORY_ICONS[category.title] || Terminal;
+            return (
+              <Reveal key={category.title} delay={i * 80} className={i === TECHNICAL_STACK.length - 1 && TECHNICAL_STACK.length % 2 === 1 ? "sm:col-span-2" : ""}>
+                <div className="glass-card h-full p-5">
+                  <div className="flex items-center gap-2.5">
+                    <span className="rounded-lg border border-blue-400/20 bg-blue-500/10 p-2 text-blue-300">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <h3 className="text-sm font-semibold text-white">{category.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-400">{category.skills.join(" · ")}</p>
                 </div>
-                <h3 className="font-bold text-white text-base tracking-tight">
-                  {category.title}
-                </h3>
-              </div>
-
-              {/* Monospace Skill Badges */}
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-xs font-mono bg-slate-950/80 border border-slate-800/90 text-slate-300 group-hover:border-slate-700/80 px-2.5 py-1 rounded-md transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          );
-        })}
+              </Reveal>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

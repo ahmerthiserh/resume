@@ -49,18 +49,39 @@ export interface CredentialItem {
 
 export const PROFILE_DATA = {
   name: "Ahmad Isah",
-  title: "Full-Stack Software Engineer | Mobile & Cloud Architecture",
+  title: "Full-Stack Software Engineer | Mobile, Backend & Payments",
   availability: "Available for Contract & Remote Engagements",
-  bio: "Full-Stack Software Engineer with proven experience architecting, building, and launching full-cycle mobile and cloud-based applications. Engineering lead behind multi-platform commerce, fintech, and offline-first POS systems across West Africa. Specialized in building fault-tolerant backend services (Node.js, Laravel), responsive cross-platform mobile apps (Flutter, React Native), and high-concurrency payment integrations with automated reconciliation.",
-  location: "Gombe, Nigeria (Operating in GMT+1 / Nigeria · Europe overlap)",
+  bio: "Full-stack software engineer building mobile apps, backend services and payment systems with Flutter, Node.js and Laravel. Shipped Mini Mart, a marketplace live on the web, Google Play and the App Store; V Pay, a payment gateway that issues virtual bank accounts and reconciles webhook payments; and an offline-first POS that keeps retail stores selling through internet outages.",
+  location: "Gombe, Nigeria · GMT+1 (overlaps with Europe)",
   phone: "+2348061939536",
+  phoneDisplay: "+234 806 193 9536",
   email: "ahmadisah6293@gmail.com",
   resumePath: "/CV.pdf",
   linkedin: "https://linkedin.com/in/ahmerthiserh",
   github: "https://github.com/ahmerthiserh",
 };
 
+export interface Highlight {
+  value: number;
+  from?: number;
+  decimals?: number;
+  suffix?: string;
+  label: string;
+  detail: string;
+}
+
+export const HIGHLIGHTS: Highlight[] = [
+  { value: 3, label: "Products in production", detail: "Mini Mart · V Pay · SalesRepAnalytics" },
+  { value: 3, label: "Platforms shipped to", detail: "Web · Google Play · App Store" },
+  { value: 99.9, from: 90, decimals: 1, suffix: "%", label: "Platform uptime", detail: "Commerce & banking services at Vetris Tech" },
+  { value: 2022, from: 2010, label: "Building software since", detail: "Gombe · Kano · Remote" },
+];
+
 export const TECHNICAL_STACK: SkillCategory[] = [
+  {
+    title: "Web Frontend",
+    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  },
   {
     title: "Mobile Development",
     skills: [
@@ -168,7 +189,7 @@ export const PROJECTS: Project[] = [
     stack: ["Node.js", "Laravel", "MySQL", "Redis", "Webhooks"],
     image: "/projects/pay.png",
     live: "https://github.com/ahmerthiserh",
-    actionText: "Core Repo ↗",
+    actionText: "GitHub Profile ↗",
     status: "Enterprise API / Production",
     architectureOverview:
       "Architected an API-first multi-tenant financial transaction engine that issues automated dynamic virtual bank accounts and processes real-time utility billings. Designed a distributed Redis-queued event processing pipeline with strict database row-level locking to guarantee idempotent webhook settlements and eliminate duplicate debits during gateway timeouts.",
@@ -185,7 +206,7 @@ export const PROJECTS: Project[] = [
     ],
     externalLinks: [
       {
-        label: "GitHub / Case Study ↗",
+        label: "GitHub Profile (private repo) ↗",
         url: "https://github.com/ahmerthiserh",
         isPrimary: true,
       },
@@ -242,19 +263,6 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    company: "Vetris Tech",
-    location: "Remote / Nigeria",
-    role: "Lead Software Engineer & Technical Co-Founder",
-    period: "2024 — Present",
-    achievements: [
-      "Architected and shipped multi-tenant commerce and mobile banking services, achieving 99.9% platform uptime across high-concurrency transaction periods.",
-      "Built and launched the Mini Mart multi-platform commerce ecosystem across Web, Google Play, and the App Store using Flutter and Node.js.",
-      "Implemented real-time catalog search, localized merchant verification, and offline-first client-side data caching.",
-      "Engineered the V Pay API gateway, automating virtual bank account generation and real-time webhook payment reconciliations with zero-downtime ledger consistency.",
-    ],
-    technologies: ["Flutter", "Dart", "Node.js", "PostgreSQL", "Hive", "Redis", "Paystack"],
-  },
-  {
     company: "AWS Global Tech",
     location: "Kano, Nigeria",
     role: "Software & Product Development Engineer",
@@ -266,6 +274,19 @@ export const EXPERIENCE: ExperienceItem[] = [
       "Engineered real-time reporting dashboards with date-range metrics to monitor revenue trends, cashier performance, and inventory velocity.",
     ],
     technologies: ["Laravel", "PHP", "MySQL", "SQLite Sync", "RBAC", "Docker", "REST APIs"],
+  },
+  {
+    company: "Vetris Tech",
+    location: "Remote / Nigeria",
+    role: "Lead Software Engineer & Technical Co-Founder",
+    period: "2024 — Present",
+    achievements: [
+      "Architected and shipped multi-tenant commerce and mobile banking services, achieving 99.9% platform uptime across high-concurrency transaction periods.",
+      "Built and launched the Mini Mart multi-platform commerce ecosystem across Web, Google Play, and the App Store using Flutter and Node.js.",
+      "Implemented real-time catalog search, localized merchant verification, and offline-first client-side data caching.",
+      "Engineered the V Pay API gateway, automating virtual bank account generation and real-time webhook payment reconciliations with zero-downtime ledger consistency.",
+    ],
+    technologies: ["Flutter", "Dart", "Node.js", "PostgreSQL", "Hive", "Redis", "Paystack"],
   },
   {
     company: "Briatek Computers Nigeria Limited",

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ahmad Isah — Resume (Modern)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Inter", "Liberation Sans", Arial, sans-serif;
+    font-size: 9pt; line-height: 1.45; color: #1e293b;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+  .page { width: 210mm; height: 297mm; display: grid; grid-template-columns: 66mm 1fr; overflow: hidden; }
+
+  /* Sidebar */
+  aside { background: #0f2747; color: #dbe5f3; padding: 12mm 7.5mm 10mm 9mm; }
+  .monogram { width: 14mm; height: 14mm; border-radius: 50%; border: 1.2pt solid #5b8fd6; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13pt; color: #fff; letter-spacing: .5pt; margin-bottom: 7pt; }
+  aside h1 { font-size: 19pt; font-weight: 800; color: #fff; line-height: 1.08; letter-spacing: .2pt; }
+  aside .role { color: #8fb6ea; font-weight: 500; font-size: 9pt; margin-top: 5pt; line-height: 1.35; }
+  aside h3 { font-size: 7.8pt; font-weight: 700; letter-spacing: 1.6pt; text-transform: uppercase; color: #8fb6ea; margin: 11pt 0 5pt; padding-bottom: 2.5pt; border-bottom: .6pt solid #2b4a75; }
+  .contact div { margin-bottom: 2.5pt; word-break: break-word; font-size: 8.5pt; }
+  .contact .k { display: block; font-size: 7pt; color: #7f9cc4; text-transform: uppercase; letter-spacing: .8pt; }
+  .skill-group { margin-bottom: 5pt; }
+  .skill-group b { display: block; color: #fff; font-weight: 600; font-size: 8.6pt; margin-bottom: 2.5pt; }
+  .tags { display: flex; flex-wrap: wrap; gap: 2.5pt; }
+  .tags span { background: #1b3a63; color: #dbe5f3; border-radius: 3pt; padding: .8pt 4.5pt; font-size: 7.8pt; }
+  .cert { margin-bottom: 3.5pt; font-size: 8.2pt; line-height: 1.25; }
+  .cert small { display: block; color: #7f9cc4; font-size: 7.6pt; }
+
+  /* Main */
+  main { padding: 12mm 13mm 10mm 11mm; }
+  main h2 { font-size: 10pt; font-weight: 800; letter-spacing: 1.6pt; text-transform: uppercase; color: #0f2747; margin: 14pt 0 7pt; display: flex; align-items: center; gap: 7pt; }
+  main h2::after { content: ""; flex: 1; height: .8pt; background: #cbd5e1; }
+  main h2:first-child { margin-top: 0; }
+  .summary { color: #334155; }
+
+  .job { position: relative; padding-left: 11pt; margin-bottom: 9pt; border-left: 1.2pt solid #dbe4f0; }
+  .job::before { content: ""; position: absolute; left: -3.6pt; top: 2.5pt; width: 6pt; height: 6pt; border-radius: 50%; background: #2f6fc4; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6pt; }
+  .job-title { font-weight: 700; font-size: 9.8pt; color: #0f172a; }
+  .dates { font-size: 8pt; font-weight: 600; color: #2f6fc4; white-space: nowrap; }
+  .org { color: #475569; font-weight: 500; margin-top: .5pt; }
+  ul { margin: 3pt 0 0 10pt; }
+  li { margin-bottom: 1.6pt; color: #334155; }
+  li::marker { color: #2f6fc4; }
+
+  .proj { margin-bottom: 7pt; }
+  .proj-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .proj b { font-weight: 700; color: #0f172a; font-size: 9.4pt; }
+  .proj .link { font-size: 8pt; color: #2f6fc4; font-weight: 500; }
+  .proj p { color: #334155; margin-top: 1pt; }
+  .proj .stack { font-size: 8pt; color: #64748b; margin-top: 1pt; }
+</style>
+</head>
+<body>
+<div class="page">
+  <aside>
+    <div class="monogram">AI</div>
+    <h1>Ahmad<br>Isah</h1>
+    <div class="role">Full-Stack Software Engineer<br>Mobile · Backend · Payments</div>
+
+    <h3>Contact</h3>
+    <div class="contact">
+      <div><span class="k">Location</span>Gombe, Nigeria</div>
+      <div><span class="k">Phone</span>+234 806 193 9536</div>
+      <div><span class="k">Email</span><a href="mailto:ahmadisah6293@gmail.com">ahmadisah6293@gmail.com</a></div>
+      <div><span class="k">Portfolio</span><a href="https://ahmadisah.vercel.app">ahmadisah.vercel.app</a></div>
+      <div><span class="k">LinkedIn</span><a href="https://linkedin.com/in/ahmerthiserh">linkedin.com/in/ahmerthiserh</a></div>
+      <div><span class="k">GitHub</span><a href="https://github.com/ahmerthiserh">github.com/ahmerthiserh</a></div>
+    </div>
+
+    <h3>Skills</h3>
+    <div class="skill-group"><b>Mobile</b><div class="tags"><span>Flutter</span><span>Dart</span><span>React Native</span><span>Offline sync</span></div></div>
+    <div class="skill-group"><b>Backend</b><div class="tags"><span>Node.js</span><span>Express</span><span>PHP</span><span>Laravel</span><span>REST APIs</span><span>Webhooks</span></div></div>
+    <div class="skill-group"><b>Web frontend</b><div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind CSS</span></div></div>
+    <div class="skill-group"><b>Data &amp; DevOps</b><div class="tags"><span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>MongoDB</span><span>Docker</span><span>Git</span><span>CI/CD</span></div></div>
+    <div class="skill-group"><b>Payments &amp; auth</b><div class="tags"><span>Paystack</span><span>Flutterwave</span><span>Stripe</span><span>OAuth2</span><span>JWT</span></div></div>
+
+    <h3>Certifications</h3>
+    <div class="cert">Meta Back-End Developer<small>Coursera · 2023</small></div>
+    <div class="cert">Meta Front-End Developer<small>Coursera · 2023</small></div>
+    <div class="cert">Database Structures &amp; Management with MySQL<small>Coursera · 2023</small></div>
+    <div class="cert">Career Essentials in Software Development<small>Microsoft &amp; LinkedIn · 2024</small></div>
+
+    <h3>Education</h3>
+    <div class="cert">Senior School Certificate (SSCE)<small>NECO</small></div>
+  </aside>
+
+  <main>
+    <h2>Profile</h2>
+    <p class="summary">Full-stack software engineer building mobile apps, backend services and payment systems with Flutter, Node.js and Laravel. Shipped Mini Mart, a marketplace live on the web, Google Play and the App Store; V Pay, a payment gateway that issues virtual bank accounts and reconciles webhook payments; and an offline-first POS that keeps retail stores selling through internet outages.</p>
+
+    <h2>Experience</h2>
+    <div class="job">
+      <div class="job-head"><span class="job-title">Software &amp; Product Development Engineer</span><span class="dates">Apr 2026 – Present</span></div>
+      <div class="org">AWS Global Tech · Kano, Nigeria</div>
+      <ul>
+        <li>Built Point-of-Sale (POS) modules in Laravel and PHP for retail operations across multiple store locations.</li>
+        <li>Designed an offline database sync mechanism so cashiers keep processing sales during regional internet outages.</li>
+        <li>Implemented role-based access control and audit logs covering inventory movements, returns and cash ledgers.</li>
+        <li>Built reporting dashboards with date-range filters for revenue trends, cashier performance and inventory turnover.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head"><span class="job-title">Lead Software Engineer &amp; Technical Co-Founder</span><span class="dates">2024 – Present</span></div>
+      <div class="org">Vetris Tech · Remote</div>
+      <ul>
+        <li>Architected and shipped multi-tenant commerce and mobile banking services, maintaining 99.9% uptime through peak transaction periods.</li>
+        <li>Built and launched Mini Mart on the web, Google Play and the App Store with Flutter and Node.js, including real-time catalog search, merchant verification and offline-first caching.</li>
+        <li>Built the V Pay API gateway: automated virtual bank account issuance and real-time webhook reconciliation using idempotency keys to prevent duplicate transactions.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head"><span class="job-title">Full-Stack Developer Intern</span><span class="dates">2022 – Apr 2026</span></div>
+      <div class="org">Briatek Computers Nigeria Limited · Gombe, Nigeria</div>
+      <ul>
+        <li>Built and maintained business web applications with Laravel, MySQL and JavaScript.</li>
+        <li>Optimized SQL queries and database schemas to cut response times on high-volume reporting endpoints.</li>
+        <li>Integrated utility APIs, payment endpoints and automated notification services into client platforms.</li>
+      </ul>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="proj">
+      <div class="proj-head"><b>Mini Mart</b><a class="link" href="https://minimart.vetristech.com/">minimart.vetristech.com ↗</a></div>
+      <p>Marketplace with location-based merchant discovery, cart and multi-channel checkout. Live on the web, Google Play and the App Store.</p>
+      <div class="stack">Flutter · Node.js · PostgreSQL · Hive</div>
+    </div>
+    <div class="proj">
+      <div class="proj-head"><b>SalesRepAnalytics</b><a class="link" href="https://salesrepanalytics.com/">salesrepanalytics.com ↗</a></div>
+      <p>Sales performance platform with rep tracking, commission calculation, pipeline forecasting and role-based dashboards.</p>
+      <div class="stack">Next.js · TypeScript · Node.js · PostgreSQL</div>
+    </div>
+    <div class="proj">
+      <div class="proj-head"><b>V Pay &amp; FluxBills</b><span class="link" style="color:#64748b">Private repository</span></div>
+      <p>Payment and bill-payment API: virtual bank accounts, wallet settlements and idempotent webhook processing.</p>
+      <div class="stack">Node.js · Laravel · MySQL · Redis</div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
