@@ -7,7 +7,7 @@ import { TiltCard } from "@/components/motion/tilt-card";
 export function CertificationsSection() {
   return (
     <section id="certifications" className="mx-auto max-w-6xl scroll-mt-24 px-5 sm:px-8">
-      <SectionHeading index="04" eyebrow="Credentials" title="Certifications & education" />
+      <SectionHeading index="05" eyebrow="Credentials" title="Certifications & education" />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CREDENTIALS.map((cred, i) => {
           const Icon = cred.type === "education" ? GraduationCap : Award;

@@ -9,9 +9,9 @@ export function ProjectsSection() {
     <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-5 sm:px-8">
       <SectionHeading
         index="01"
-        eyebrow="Selected work"
-        title="Products I've shipped"
-        subtitle="Live products used by real customers: a marketplace on three platforms, a payment gateway and a sales analytics platform."
+        eyebrow="Web platforms"
+        title="Platforms I've shipped"
+        subtitle="Web platforms I've built and launched, from my own Vetris Tech ventures to systems for clients: payments, utilities, commerce, telecom and the public sector."
       />
       <div className="grid gap-6 lg:grid-cols-2">
         <Reveal className="lg:col-span-2">

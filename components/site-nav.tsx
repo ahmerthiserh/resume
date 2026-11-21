@@ -2,7 +2,8 @@ import { FileDown } from "lucide-react";
 import { PROFILE_DATA } from "@/data/portfolio";
 
 const LINKS = [
-  { href: "#projects", label: "Projects" },
+  { href: "#projects", label: "Platforms" },
+  { href: "#apps", label: "Apps" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },

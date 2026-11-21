@@ -10,7 +10,7 @@ export function ContactSection() {
           <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-600/30 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-violet-600/30 blur-3xl" />
 
-          <p className="relative font-mono text-xs uppercase tracking-[0.25em] text-blue-300">05 · Contact</p>
+          <p className="relative font-mono text-xs uppercase tracking-[0.25em] text-blue-300">06 · Contact</p>
           <h2 className="relative mx-auto mt-4 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-5xl">
             Have a product to build? <span className="text-gradient-hero">Let&apos;s talk.</span>
           </h2>

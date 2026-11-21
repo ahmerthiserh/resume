@@ -7,7 +7,7 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="mx-auto max-w-6xl scroll-mt-24 px-5 sm:px-8">
       <SectionHeading
-        index="02"
+        index="03"
         eyebrow="Experience"
         title="Where I've worked"
         subtitle="Point-of-sale software for retail, a commerce and fintech startup I co-founded, and four years building business web apps."

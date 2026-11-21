@@ -20,9 +20,22 @@ Based in Gombe, Nigeria (GMT+1). Open to contract and remote work.
 
 ### Featured projects
 
-- **[Mini Mart](https://minimart.vetristech.com/)**: an offline-first commerce marketplace built with Flutter, Node.js and PostgreSQL. Available on the web, [Google Play](https://play.google.com/store/apps/details?id=minimart.vetristech.com) and the [App Store](https://apps.apple.com/app/mini-mart-marketplace/id6804913345).
-- **V Pay & FluxBills**: a payment and bill-payment API that issues virtual bank accounts and settles wallets. It processes webhooks idempotently using Node.js, Laravel, MySQL and Redis.
-- **[SalesRepAnalytics](https://salesrepanalytics.com/)**: a platform that tracks sales performance, commissions and forecasts. Built with Next.js, TypeScript, Node.js and PostgreSQL.
+Most of these were built at [Vetris Tech](https://vetristech.com/products), as its own products or for clients.
+
+- **[Mini Mart](https://minimart.vetristech.com/)**: a marketplace for local merchants. Available on the web, [Google Play](https://play.google.com/store/apps/details?id=minimart.vetristech.com) and the [App Store](https://apps.apple.com/app/mini-mart-marketplace/id6804913345).
+- **[V Pay](https://pay.vetristech.com/)**: payment infrastructure with virtual accounts, instant deposits and merchant settlements.
+- **[Fluxbills](https://bills.vetristech.com/)**: a utility payments platform and API for airtime, data, cable TV, exam PINs and electricity tokens.
+- **[Zamtake Data Link](https://zamtakedatalink.com/)**: a data, airtime and bills platform on the web, Android and iOS. It's one of several data (VTU) platforms built, along with V-DATA, AY Data Station, Mbela Sub, Shalele Data Plug and Futuhi Data Sub.
+- **[Vem](https://vem.vetristech.com/)**: AI agent orchestration and product telemetry dashboards, on the web, Android and iOS.
+- **[Hisbah Command Gombe](https://hisbahcommandgombe.com/)**: an administrative platform for a state public-safety command.
+- **[SalesRepAnalytics](https://salesrepanalytics.com/)**: a platform that tracks sales performance, commissions and forecasts.
+
+### Mobile apps
+
+Published under the Vetris Tech Google Play developer account. Some are also on the App Store.
+
+- **Mini Mart**, **Zamtake Data Link**, **VEM** and **Mazaf Ecommerce**: on Google Play and the App Store.
+- **UniMate** (a student planner and budget app), **Ludora** (a Ludo game) and **Status Saver**: on Google Play.
 
 ### Technical stack
 

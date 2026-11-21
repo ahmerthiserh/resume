@@ -135,3 +135,17 @@ body {
   .tilt-card { transform: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Floating phone mockups ---------- */
+.phone-float {
+  transform: rotateY(-14deg) rotateX(6deg);
+  animation: phone-float 6s ease-in-out infinite;
+}
+.tilt-card:hover .phone-float { animation-play-state: paused; }
+@keyframes phone-float {
+  0%, 100% { transform: translateY(0) rotateY(-14deg) rotateX(6deg); }
+  50% { transform: translateY(-8px) rotateY(10deg) rotateX(4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .phone-float { animation: none; }
+}

@@ -2,6 +2,7 @@ import { SiteNav } from "@/components/site-nav";
 import { HeroSection } from "@/components/hero-section";
 import { HighlightsSection } from "@/components/highlights-section";
 import { ProjectsSection } from "@/components/projects-section";
+import { MobileAppsSection } from "@/components/mobile-apps-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { SkillsSection } from "@/components/skills-section";
 import { CertificationsSection } from "@/components/certifications-section";
@@ -23,6 +24,7 @@ export default function Home() {
         <HeroSection />
         <HighlightsSection />
         <ProjectsSection />
+        <MobileAppsSection />
         <ExperienceSection />
         <SkillsSection />
         <CertificationsSection />

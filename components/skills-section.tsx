@@ -25,7 +25,7 @@ export function SkillsSection() {
   return (
     <section id="skills" className="mx-auto max-w-6xl scroll-mt-24 px-5 sm:px-8">
       <SectionHeading
-        index="03"
+        index="04"
         eyebrow="Toolbox"
         title="Technologies I use"
         subtitle="From mobile clients to payment back ends. Move your mouse over the globe to spin it."

@@ -4,9 +4,12 @@ import type { Project } from "@/data/portfolio";
 import { TiltCard } from "@/components/motion/tilt-card";
 
 export function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
-  const links = project.links?.length
+  const isStore = (url: string) => /play\.google\.com|apps\.apple\.com/.test(url);
+  const allLinks = project.links?.length
     ? project.links
     : [{ label: project.actionText, url: project.live }];
+  const links = allLinks.filter((l) => !isStore(l.url));
+  const hasApps = allLinks.some((l) => isStore(l.url));
   const isPrivate = !project.links?.length;
 
   return (
@@ -28,7 +31,11 @@ export function ProjectCard({ project, featured = false }: { project: Project; f
               className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.05]"
             />
           ) : (
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.35),transparent_60%),radial-gradient(circle_at_80%_70%,rgba(139,92,246,0.3),transparent_55%)]" />
+            <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.35),transparent_60%),radial-gradient(circle_at_80%_70%,rgba(139,92,246,0.3),transparent_55%)]">
+              <span className="flex h-20 w-20 items-center justify-center rounded-3xl border border-white/15 bg-white/10 text-3xl font-bold text-white shadow-2xl shadow-blue-900/50 backdrop-blur">
+                {project.title.charAt(0)}
+              </span>
+            </div>
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent" />
           <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-slate-950/80 px-2.5 py-1 font-mono text-[11px] font-medium text-emerald-300 backdrop-blur">
@@ -44,8 +51,13 @@ export function ProjectCard({ project, featured = false }: { project: Project; f
             {project.title}
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-[15px]">{project.summary}</p>
+          {project.note && (
+            <p className="mt-3 rounded-lg border border-blue-400/15 bg-blue-500/[0.06] px-3 py-2 text-xs leading-relaxed text-blue-200/90">
+              {project.note}
+            </p>
+          )}
 
-          {featured && (
+          {featured && project.highlights && (
             <ul className="mt-4 space-y-2">
               {[project.highlights[0], project.highlights[2]].filter(Boolean).map((h) => (
                 <li key={h} className="flex gap-2.5 text-sm text-slate-400">
@@ -56,6 +68,7 @@ export function ProjectCard({ project, featured = false }: { project: Project; f
             </ul>
           )}
 
+          {project.stack.length > 0 && (
           <div className="mt-5 flex flex-wrap gap-1.5">
             {project.stack.map((tech) => (
               <span key={tech} className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-slate-300">
@@ -63,6 +76,7 @@ export function ProjectCard({ project, featured = false }: { project: Project; f
               </span>
             ))}
           </div>
+          )}
 
           <div className="mt-auto flex flex-wrap gap-2 pt-6">
             {links.map((link) => (
@@ -78,6 +92,14 @@ export function ProjectCard({ project, featured = false }: { project: Project; f
                 <ArrowUpRight className="h-3.5 w-3.5 text-blue-400" />
               </a>
             ))}
+            {hasApps && (
+              <a
+                href="#apps"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-400/20 bg-emerald-500/10 px-3.5 py-2 text-xs font-semibold text-emerald-200 transition-colors hover:bg-emerald-500/20"
+              >
+                Also on iOS &amp; Android ↓
+              </a>
+            )}
           </div>
         </div>
       </div>
