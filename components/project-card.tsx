@@ -1,106 +1,81 @@
 import Image from "next/image";
-import { ArrowUpRight, Lock } from "lucide-react";
+import { ArrowUpRight, Smartphone } from "lucide-react";
 import type { Project } from "@/data/portfolio";
 import { TiltCard } from "@/components/motion/tilt-card";
 
-export function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
-  const isStore = (url: string) => /play\.google\.com|apps\.apple\.com/.test(url);
+const isStore = (url: string) => /play\.google\.com|apps\.apple\.com/.test(url);
+
+export function ProjectCard({ project, wide = false }: { project: Project; wide?: boolean }) {
   const allLinks = project.links?.length
     ? project.links
     : [{ label: project.actionText, url: project.live }];
-  const links = allLinks.filter((l) => !isStore(l.url));
+  const webLinks = allLinks.filter((l) => !isStore(l.url));
   const hasApps = allLinks.some((l) => isStore(l.url));
-  const isPrivate = !project.links?.length;
 
   return (
-    <TiltCard max={featured ? 6 : 9} className="glass-card group flex flex-col overflow-hidden">
-      <div className={featured ? "grid h-full lg:grid-cols-[1.15fr_1fr]" : "flex h-full flex-col"}>
-        {/* Media */}
-        <div
-          className={`relative overflow-hidden bg-slate-950 ${
-            featured ? "aspect-[16/10] lg:aspect-auto lg:min-h-[340px]" : "aspect-[16/9]"
-          }`}
-          style={{ transform: "translateZ(30px)" }}
-        >
-          {project.image ? (
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              sizes={featured ? "(max-width: 1024px) 100vw, 640px" : "(max-width: 1024px) 100vw, 560px"}
-              className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.05]"
-            />
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.35),transparent_60%),radial-gradient(circle_at_80%_70%,rgba(139,92,246,0.3),transparent_55%)]">
-              <span className="flex h-20 w-20 items-center justify-center rounded-3xl border border-white/15 bg-white/10 text-3xl font-bold text-white shadow-2xl shadow-blue-900/50 backdrop-blur">
-                {project.title.charAt(0)}
-              </span>
-            </div>
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent" />
-          <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-slate-950/80 px-2.5 py-1 font-mono text-[11px] font-medium text-emerald-300 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            {project.status}
-          </span>
-        </div>
+    <TiltCard max={wide ? 5 : 8} className="glass-card group flex h-full flex-col overflow-hidden">
+      {/* Media */}
+      <div className="relative h-36 overflow-hidden bg-slate-950 sm:h-32 lg:h-36" style={{ transform: "translateZ(25px)" }}>
+        {project.image && (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes={wide ? "(max-width: 1024px) 100vw, 580px" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 290px"}
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.05]"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+        <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-slate-950/80 px-2 py-0.5 font-mono text-[10px] text-emerald-300 backdrop-blur">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          {project.status}
+        </span>
+      </div>
 
-        {/* Content */}
-        <div className={`relative flex flex-1 flex-col p-6 ${featured ? "sm:p-8" : "sm:p-7"}`} style={{ transform: "translateZ(20px)" }}>
-          <p className="font-mono text-xs font-medium text-blue-400">{project.role}</p>
-          <h3 className={`mt-2 font-bold tracking-tight text-white ${featured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>
-            {project.title}
-          </h3>
-          <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-[15px]">{project.summary}</p>
-          {project.note && (
-            <p className="mt-3 rounded-lg border border-blue-400/15 bg-blue-500/[0.06] px-3 py-2 text-xs leading-relaxed text-blue-200/90">
-              {project.note}
-            </p>
-          )}
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-4 sm:p-5" style={{ transform: "translateZ(15px)" }}>
+        <p className="truncate font-mono text-[11px] text-blue-400">{project.role}</p>
+        <h3 className={`mt-1 font-bold leading-snug tracking-tight text-white ${wide ? "text-xl" : "text-base"}`}>
+          {project.title}
+        </h3>
+        <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-slate-400">{project.summary}</p>
+        {project.note && (
+          <p className="mt-2 line-clamp-2 text-[11px] leading-relaxed text-blue-200/70">{project.note}</p>
+        )}
 
-          {featured && project.highlights && (
-            <ul className="mt-4 space-y-2">
-              {[project.highlights[0], project.highlights[2]].filter(Boolean).map((h) => (
-                <li key={h} className="flex gap-2.5 text-sm text-slate-400">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-blue-400 to-violet-500" />
-                  {h}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {project.stack.length > 0 && (
-          <div className="mt-5 flex flex-wrap gap-1.5">
-            {project.stack.map((tech) => (
-              <span key={tech} className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-slate-300">
+        {project.stack.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-1">
+            {project.stack.slice(0, wide ? 5 : 3).map((tech) => (
+              <span key={tech} className="rounded border border-white/10 bg-white/[0.04] px-1.5 py-0.5 font-mono text-[10px] text-slate-400">
                 {tech}
               </span>
             ))}
           </div>
-          )}
+        )}
 
-          <div className="mt-auto flex flex-wrap gap-2 pt-6">
-            {links.map((link) => (
-              <a
-                key={link.url + link.label}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:border-blue-400/50 hover:bg-blue-500/10"
-              >
-                {isPrivate ? <Lock className="h-3.5 w-3.5 text-slate-400" /> : null}
-                {link.label.replace(" ↗", "")}
-                <ArrowUpRight className="h-3.5 w-3.5 text-blue-400" />
-              </a>
-            ))}
-            {hasApps && (
-              <a
-                href="#apps"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-400/20 bg-emerald-500/10 px-3.5 py-2 text-xs font-semibold text-emerald-200 transition-colors hover:bg-emerald-500/20"
-              >
-                Also on iOS &amp; Android ↓
-              </a>
-            )}
-          </div>
+        <div className="mt-auto flex flex-wrap gap-1.5 pt-4">
+          {webLinks.map((link) => (
+            <a
+              key={link.url + link.label}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-white/5 px-2.5 py-1.5 text-[11px] font-semibold text-white transition-colors hover:border-blue-400/50 hover:bg-blue-500/10"
+            >
+              {link.label.replace(" ↗", "")}
+              <ArrowUpRight className="h-3 w-3 text-blue-400" />
+            </a>
+          ))}
+          {hasApps && (
+            <a
+              href="#apps"
+              title="Also available on iOS & Android"
+              className="inline-flex items-center gap-1 rounded-md border border-emerald-400/20 bg-emerald-500/10 px-2.5 py-1.5 text-[11px] font-semibold text-emerald-200 transition-colors hover:bg-emerald-500/20"
+            >
+              <Smartphone className="h-3 w-3" />
+              App
+            </a>
+          )}
         </div>
       </div>
     </TiltCard>

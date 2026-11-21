@@ -13,12 +13,12 @@ export function ProjectsSection() {
         title="Platforms I've shipped"
         subtitle="Web platforms I've built and launched, from my own Vetris Tech ventures to systems for clients: payments, utilities, commerce, telecom and the public sector."
       />
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Reveal className="lg:col-span-2">
-          <ProjectCard project={featured} featured />
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal className="sm:col-span-2">
+          <ProjectCard project={featured} wide />
         </Reveal>
         {rest.map((project, i) => (
-          <Reveal key={project.id} delay={i * 120}>
+          <Reveal key={project.id} delay={(i % 4) * 80}>
             <ProjectCard project={project} />
           </Reveal>
         ))}
