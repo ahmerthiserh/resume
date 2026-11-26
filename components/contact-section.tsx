@@ -43,12 +43,15 @@ export function ContactSection() {
             </a>
           </div>
 
-          <div className="relative mt-6 flex items-center justify-center gap-6 text-sm text-slate-300">
+          <div className="relative mt-6 flex items-center justify-center flex-wrap gap-x-6 gap-y-2 text-sm text-slate-300">
             <a href={PROFILE_DATA.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-white">
               LinkedIn <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
             <a href={PROFILE_DATA.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-white">
               GitHub <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+            <a href={PROFILE_DATA.x} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-white">
+              X <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>

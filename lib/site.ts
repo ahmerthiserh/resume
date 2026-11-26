@@ -67,7 +67,13 @@ export function buildJsonLd() {
           name: c.title,
           recognizedBy: { "@type": "Organization", name: c.issuer },
         })),
-        sameAs: [PROFILE_DATA.linkedin, PROFILE_DATA.github],
+        sameAs: [
+          PROFILE_DATA.linkedin,
+          PROFILE_DATA.github,
+          PROFILE_DATA.x,
+          PROFILE_DATA.googlePlayDeveloper,
+          PROFILE_DATA.appStoreDeveloper,
+        ],
       },
       {
         "@type": "WebSite",
@@ -85,7 +91,7 @@ export function buildJsonLd() {
         name: SITE_TITLE,
         isPartOf: { "@id": `${SITE_URL}/#website` },
         mainEntity: { "@id": personId },
-        dateModified: new Date("2026-11-21").toISOString(),
+        dateModified: new Date("2026-11-27").toISOString(),
       },
       {
         "@type": "ItemList",

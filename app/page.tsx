@@ -6,6 +6,7 @@ import { MobileAppsSection } from "@/components/mobile-apps-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { SkillsSection } from "@/components/skills-section";
 import { CertificationsSection } from "@/components/certifications-section";
+import { LatestPostsSection } from "@/components/latest-posts-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { buildJsonLd } from "@/lib/site";
@@ -33,6 +34,7 @@ export default function Home() {
         <ExperienceSection />
         <SkillsSection />
         <CertificationsSection />
+        <LatestPostsSection />
         <ContactSection />
         <Footer />
       </div>

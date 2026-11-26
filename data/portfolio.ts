@@ -65,6 +65,9 @@ export const PROFILE_DATA = {
   resumePath: "/CV.pdf",
   linkedin: "https://linkedin.com/in/ahmerthiserh",
   github: "https://github.com/ahmerthiserh",
+  x: "https://x.com/_ahmerth",
+  googlePlayDeveloper: "https://play.google.com/store/apps/dev?id=5333141421915649889",
+  appStoreDeveloper: "https://apps.apple.com/us/developer/vetris-tech-solutions/id1894172843",
 };
 
 export interface Highlight {

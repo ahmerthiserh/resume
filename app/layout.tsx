@@ -41,6 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    creator: "@_ahmerth",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },

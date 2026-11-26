@@ -1,25 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FileDown } from "lucide-react";
 import { PROFILE_DATA } from "@/data/portfolio";
 
 const LINKS = [
-  { href: "#projects", label: "Platforms" },
-  { href: "#apps", label: "Apps" },
-  { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#projects", label: "Platforms" },
+  { href: "/#apps", label: "Apps" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function SiteNav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-2.5 shadow-lg shadow-black/30 backdrop-blur-xl">
-        <a href="#top" className="flex items-center gap-2.5 font-semibold text-white">
+        <Link href="/" className="flex items-center gap-2.5 font-semibold text-white">
           <span className="relative rounded-full bg-linear-to-br from-blue-500 to-violet-600 p-0.5 shadow-md shadow-blue-600/40">
             <Image src="/ahmad-isah-avatar.webp" alt="Ahmad Isah" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
           </span>
           <span className="hidden sm:inline">{PROFILE_DATA.name}</span>
-        </a>
+        </Link>
         <div className="flex items-center gap-1 sm:gap-2">
           {LINKS.map((l) => (
             <a
