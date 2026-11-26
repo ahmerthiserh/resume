@@ -11,7 +11,7 @@
   html, body { background: #fff; }
   body {
     font-family: "Inter", "Liberation Sans", Arial, sans-serif;
-    font-size: 9pt; line-height: 1.45; color: #1e293b;
+    font-size: 8.8pt; line-height: 1.42; color: #1e293b;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
   a { color: inherit; text-decoration: none; }
@@ -19,7 +19,8 @@
 
   /* Sidebar */
   aside { background: #0f2747; color: #dbe5f3; padding: 12mm 7.5mm 10mm 9mm; }
-  .monogram { width: 14mm; height: 14mm; border-radius: 50%; border: 1.2pt solid #5b8fd6; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13pt; color: #fff; letter-spacing: .5pt; margin-bottom: 7pt; }
+  .photo { width: 30mm; height: 30mm; border-radius: 50%; padding: 1.2pt; background: linear-gradient(135deg, #5b8fd6, #8b5cf6); margin-bottom: 8pt; }
+  .photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
   aside h1 { font-size: 19pt; font-weight: 800; color: #fff; line-height: 1.08; letter-spacing: .2pt; }
   aside .role { color: #8fb6ea; font-weight: 500; font-size: 9pt; margin-top: 5pt; line-height: 1.35; }
   aside h3 { font-size: 7.8pt; font-weight: 700; letter-spacing: 1.6pt; text-transform: uppercase; color: #8fb6ea; margin: 11pt 0 5pt; padding-bottom: 2.5pt; border-bottom: .6pt solid #2b4a75; }
@@ -34,22 +35,23 @@
 
   /* Main */
   main { padding: 12mm 13mm 10mm 11mm; }
-  main h2 { font-size: 10pt; font-weight: 800; letter-spacing: 1.6pt; text-transform: uppercase; color: #0f2747; margin: 14pt 0 7pt; display: flex; align-items: center; gap: 7pt; }
+  main h2 { font-size: 10pt; font-weight: 800; letter-spacing: 1.6pt; text-transform: uppercase; color: #0f2747; margin: 11pt 0 6pt; display: flex; align-items: center; gap: 7pt; }
   main h2::after { content: ""; flex: 1; height: .8pt; background: #cbd5e1; }
   main h2:first-child { margin-top: 0; }
   .summary { color: #334155; }
 
-  .job { position: relative; padding-left: 11pt; margin-bottom: 9pt; border-left: 1.2pt solid #dbe4f0; }
+  .job { position: relative; padding-left: 11pt; margin-bottom: 7pt; border-left: 1.2pt solid #dbe4f0; }
   .job::before { content: ""; position: absolute; left: -3.6pt; top: 2.5pt; width: 6pt; height: 6pt; border-radius: 50%; background: #2f6fc4; }
   .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6pt; }
   .job-title { font-weight: 700; font-size: 9.8pt; color: #0f172a; }
   .dates { font-size: 8pt; font-weight: 600; color: #2f6fc4; white-space: nowrap; }
   .org { color: #475569; font-weight: 500; margin-top: .5pt; }
   ul { margin: 3pt 0 0 10pt; }
-  li { margin-bottom: 1.6pt; color: #334155; }
+  li { margin-bottom: 1.2pt; color: #334155; }
   li::marker { color: #2f6fc4; }
 
-  .proj { margin-bottom: 7pt; }
+  .proj { margin-bottom: 4.5pt; }
+  .proj-group { font-size: 7.6pt; font-weight: 700; letter-spacing: 1pt; text-transform: uppercase; color: #2f6fc4; margin: 6pt 0 3pt; }
   .proj-head { display: flex; justify-content: space-between; align-items: baseline; }
   .proj b { font-weight: 700; color: #0f172a; font-size: 9.4pt; }
   .proj .link { font-size: 8pt; color: #2f6fc4; font-weight: 500; }
@@ -60,16 +62,16 @@
 <body>
 <div class="page">
   <aside>
-    <div class="monogram">AI</div>
+    <div class="photo"><img src="../public/ahmad-isah-avatar.webp" alt="Ahmad Isah"></div>
     <h1>Ahmad<br>Isah</h1>
     <div class="role">Full-Stack Software Engineer<br>Mobile · Backend · Payments</div>
 
     <h3>Contact</h3>
     <div class="contact">
-      <div><span class="k">Location</span>Gombe, Nigeria</div>
+      <div><span class="k">Location</span>Gombe, Nigeria (GMT+1)</div>
       <div><span class="k">Phone</span>+234 806 193 9536</div>
       <div><span class="k">Email</span><a href="mailto:ahmadisah6293@gmail.com">ahmadisah6293@gmail.com</a></div>
-      <div><span class="k">Portfolio</span><a href="https://ahmadisah.vercel.app">ahmadisah.vercel.app</a></div>
+      <div><span class="k">Portfolio</span><a href="https://www.ahmadisah.com.ng">www.ahmadisah.com.ng</a></div>
       <div><span class="k">LinkedIn</span><a href="https://linkedin.com/in/ahmerthiserh">linkedin.com/in/ahmerthiserh</a></div>
       <div><span class="k">GitHub</span><a href="https://github.com/ahmerthiserh">github.com/ahmerthiserh</a></div>
     </div>
@@ -93,7 +95,7 @@
 
   <main>
     <h2>Profile</h2>
-    <p class="summary">Full-stack software engineer building mobile apps, backend services and payment systems with Flutter, Node.js and Laravel. Shipped Mini Mart, a marketplace live on the web, Google Play and the App Store; V Pay, a payment gateway that issues virtual bank accounts and reconciles webhook payments; and an offline-first POS that keeps retail stores selling through internet outages.</p>
+    <p class="summary">Full-stack software engineer and co-founder of Vetris Tech. I build mobile apps, backend services and payment systems with Flutter, Node.js and Laravel, and have shipped 15+ web platforms and apps, including 10 on Google Play and 4 on the App Store, covering commerce, payments, telecom and public-sector work.</p>
 
     <h2>Experience</h2>
     <div class="job">
@@ -101,45 +103,55 @@
       <div class="org">AWS Global Tech · Kano, Nigeria</div>
       <ul>
         <li>Built Point-of-Sale (POS) modules in Laravel and PHP for retail operations across multiple store locations.</li>
-        <li>Designed an offline database sync mechanism so cashiers keep processing sales during regional internet outages.</li>
-        <li>Implemented role-based access control and audit logs covering inventory movements, returns and cash ledgers.</li>
-        <li>Built reporting dashboards with date-range filters for revenue trends, cashier performance and inventory turnover.</li>
+        <li>Designed an offline database sync mechanism so cashiers keep processing sales during internet outages.</li>
+        <li>Implemented role-based access control and audit logs for inventory movements, returns and cash ledgers.</li>
+        <li>Built reporting dashboards for revenue trends, cashier performance and inventory turnover.</li>
       </ul>
     </div>
     <div class="job">
       <div class="job-head"><span class="job-title">Lead Software Engineer &amp; Technical Co-Founder</span><span class="dates">2024 – Present</span></div>
-      <div class="org">Vetris Tech · Remote</div>
+      <div class="org">Vetris Tech · Gombe / Remote</div>
       <ul>
-        <li>Architected and shipped multi-tenant commerce and mobile banking services, maintaining 99.9% uptime through peak transaction periods.</li>
-        <li>Built and launched Mini Mart on the web, Google Play and the App Store with Flutter and Node.js, including real-time catalog search, merchant verification and offline-first caching.</li>
-        <li>Built the V Pay API gateway: automated virtual bank account issuance and real-time webhook reconciliation using idempotency keys to prevent duplicate transactions.</li>
+        <li>Lead engineering for 15+ web platforms and mobile apps across commerce, payments, telecom and the public sector.</li>
+        <li>Built and launched Mini Mart on the web, Google Play and the App Store with Flutter and Node.js.</li>
+        <li>Built V Pay and Fluxbills: virtual accounts, instant deposits and utility payments with idempotent webhook processing, at 99.9% uptime.</li>
+        <li>Delivered client platforms including Zamtake Data Link and the Hisbah Command Gombe administrative system.</li>
       </ul>
     </div>
     <div class="job">
       <div class="job-head"><span class="job-title">Full-Stack Developer Intern</span><span class="dates">2022 – Apr 2026</span></div>
-      <div class="org">Briatek Computers Nigeria Limited · Gombe, Nigeria</div>
+      <div class="org">Briatek Computers Nigeria Limited · Gombe</div>
       <ul>
         <li>Built and maintained business web applications with Laravel, MySQL and JavaScript.</li>
-        <li>Optimized SQL queries and database schemas to cut response times on high-volume reporting endpoints.</li>
-        <li>Integrated utility APIs, payment endpoints and automated notification services into client platforms.</li>
+        <li>Optimized SQL queries and schemas to cut response times on high-volume reporting endpoints.</li>
+        <li>Integrated utility APIs, payment endpoints and automated notifications into client platforms.</li>
       </ul>
     </div>
 
-    <h2>Projects</h2>
+    <h2>Selected Projects</h2>
     <div class="proj">
-      <div class="proj-head"><b>Mini Mart</b><a class="link" href="https://minimart.vetristech.com/">minimart.vetristech.com ↗</a></div>
-      <p>Marketplace with location-based merchant discovery, cart and multi-channel checkout. Live on the web, Google Play and the App Store.</p>
-      <div class="stack">Flutter · Node.js · PostgreSQL · Hive</div>
+      <div class="proj-head"><b>Mini Mart</b><a class="link" href="https://minimart.vetristech.com/">minimart.vetristech.com · Play · App Store</a></div>
+      <p>Multi-vendor marketplace with merchant storefronts, wallet checkout and order tracking.</p>
     </div>
     <div class="proj">
-      <div class="proj-head"><b>SalesRepAnalytics</b><a class="link" href="https://salesrepanalytics.com/">salesrepanalytics.com ↗</a></div>
-      <p>Sales performance platform with rep tracking, commission calculation, pipeline forecasting and role-based dashboards.</p>
-      <div class="stack">Next.js · TypeScript · Node.js · PostgreSQL</div>
+      <div class="proj-head"><b>V Pay &amp; Fluxbills</b><a class="link" href="https://pay.vetristech.com/">pay.vetristech.com · bills.vetristech.com</a></div>
+      <p>Payment infrastructure with virtual accounts and settlements; utility payments API for airtime, data, cable TV and electricity.</p>
     </div>
     <div class="proj">
-      <div class="proj-head"><b>V Pay &amp; FluxBills</b><span class="link" style="color:#64748b">Private repository</span></div>
-      <p>Payment and bill-payment API: virtual bank accounts, wallet settlements and idempotent webhook processing.</p>
-      <div class="stack">Node.js · Laravel · MySQL · Redis</div>
+      <div class="proj-head"><b>Zamtake Data Link</b><a class="link" href="https://zamtakedatalink.com/">zamtakedatalink.com · Play · App Store</a></div>
+      <p>Data, airtime and bills platform. One of several VTU platforms built, with V-DATA, AY Data Station, Mbela Sub and Shalele Data Plug.</p>
+    </div>
+    <div class="proj">
+      <div class="proj-head"><b>Hisbah Command Gombe</b><a class="link" href="https://hisbahcommandgombe.com/">hisbahcommandgombe.com</a></div>
+      <p>Administrative platform for case logging, officer deployment and command oversight.</p>
+    </div>
+    <div class="proj">
+      <div class="proj-head"><b>Mobile apps</b><span class="link">Google Play · App Store</span></div>
+      <p>VEM (fashion marketplace), Mazaf Ecommerce, UniMate (student planner), Ludora (Ludo game) and Status Saver.</p>
+    </div>
+    <div class="proj-group">Freelance · subcontracted</div>
+    <div class="proj">
+      <p><b style="font-size:8.8pt">DigiCollegePro</b> (higher-education ERP), <b style="font-size:8.8pt">DigiSmartSave</b> (interest-free savings platform), <b style="font-size:8.8pt">SalesRepAnalytics</b> (sales analytics) and the <b style="font-size:8.8pt">AGILE Adamawa portal</b> (contributor; 145,000+ beneficiaries).</p>
     </div>
   </main>
 </div>

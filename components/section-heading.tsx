@@ -15,7 +15,7 @@ export function SectionHeading({
     <Reveal className="mb-10 sm:mb-14">
       <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-blue-400">
         <span className="text-slate-500">{index}</span>
-        <span className="h-px w-10 bg-gradient-to-r from-blue-500 to-transparent" />
+        <span className="h-px w-10 bg-linear-to-r from-blue-500 to-transparent" />
         {eyebrow}
       </p>
       <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">

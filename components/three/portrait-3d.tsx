@@ -29,30 +29,30 @@ export function Portrait3D() {
   }, []);
 
   return (
-    <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]" style={{ perspective: "1400px" }}>
+    <div className="relative mx-auto w-full max-w-75 sm:max-w-90 lg:max-w-100" style={{ perspective: "1400px" }}>
       {/* 3D orb + orbit rings behind the portrait */}
-      <div className="pointer-events-none absolute -inset-[30%] -z-0">
+      <div className="pointer-events-none absolute -inset-[30%] z-0">
         <HeroCanvas />
       </div>
 
       <div ref={rig} className="portrait-rig relative" style={{ transformStyle: "preserve-3d" }}>
         {/* Back glow plate */}
         <div
-          className="absolute -inset-4 rounded-t-[999px] rounded-b-[2.5rem] bg-gradient-to-b from-blue-600/50 via-violet-600/30 to-cyan-500/20 blur-2xl"
+          className="absolute -inset-4 rounded-t-[999px] rounded-b-[2.5rem] bg-linear-to-b from-blue-600/50 via-violet-600/30 to-cyan-500/20 blur-2xl"
           style={{ transform: "translateZ(-80px)" }}
         />
         {/* Offset outline for depth */}
         <div
-          className="absolute inset-0 rounded-t-[999px] rounded-b-[2rem] border border-blue-400/30"
+          className="absolute inset-0 rounded-t-[999px] rounded-b-4xl border border-blue-400/30"
           style={{ transform: "translateZ(-40px) translate(18px, 18px)" }}
         />
 
         {/* Photo in an arch frame with a gradient border */}
         <div
-          className="relative rounded-t-[999px] rounded-b-[2rem] bg-gradient-to-b from-blue-400/70 via-violet-500/50 to-white/5 p-[2px] shadow-[0_40px_80px_-30px_rgba(37,99,235,0.6)]"
+          className="relative rounded-t-[999px] rounded-b-4xl bg-linear-to-b from-blue-400/70 via-violet-500/50 to-white/5 p-0.5 shadow-[0_40px_80px_-30px_rgba(37,99,235,0.6)]"
           style={{ transform: "translateZ(0px)" }}
         >
-          <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-[calc(2rem-2px)] bg-slate-900">
+          <div className="relative aspect-4/5 overflow-hidden rounded-t-[999px] rounded-b-[calc(2rem-2px)] bg-slate-900">
             <Image
               src="/ahmad-isah-portrait.webp"
               alt="Ahmad Isah, full-stack software engineer"
@@ -61,7 +61,7 @@ export function Portrait3D() {
               sizes="(max-width: 640px) 300px, 400px"
               className="object-cover object-top"
             />
-            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-950/85 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-slate-950/85 to-transparent" />
             <div className="portrait-sheen pointer-events-none absolute inset-0" />
             <div className="absolute inset-x-0 bottom-4 text-center">
               <p className="text-sm font-semibold text-white">Ahmad Isah</p>

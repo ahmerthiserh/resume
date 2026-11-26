@@ -27,15 +27,15 @@ function AppleIcon(props: React.SVGProps<SVGSVGElement>) {
 function Phone({ app }: { app: MobileApp }) {
   return (
     <div
-      className="relative mx-auto aspect-[9/19] w-[62%] max-w-[210px] rounded-[2rem] border border-white/15 bg-slate-950 p-[6px] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.04),inset_0_0_0_2px_rgba(148,163,184,0.15)]"
+      className="relative mx-auto aspect-9/19 w-[62%] max-w-52.5 rounded-4xl border border-white/15 bg-slate-950 p-1.5 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.04),inset_0_0_0_2px_rgba(148,163,184,0.15)]"
       style={{ transform: "translateZ(50px)" }}
     >
       <div className="relative h-full w-full overflow-hidden rounded-[1.6rem] bg-slate-900">
         <Image src={app.screenshot} alt={`${app.name} app screen`} fill sizes="210px" className="object-cover object-top" />
         {/* camera notch */}
-        <div className="absolute left-1/2 top-1.5 h-[14px] w-[34%] -translate-x-1/2 rounded-full bg-black/90" />
+        <div className="absolute left-1/2 top-1.5 h-3.5 w-[34%] -translate-x-1/2 rounded-full bg-black/90" />
         {/* glass reflection */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-white/15 via-transparent to-transparent" />
       </div>
     </div>
   );

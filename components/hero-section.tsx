@@ -22,7 +22,7 @@ export function HeroSection() {
   const [primary, secondary] = PROFILE_DATA.title.split(" | ");
 
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
+    <section id="top" className="relative flex min-h-svh items-center overflow-hidden pt-28 pb-16">
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
         {/* 3D portrait: above the text on mobile, right column on desktop */}
         <div className="hero-in order-first px-8 sm:px-12 lg:order-last lg:px-6" style={{ animationDelay: "120ms" }}>
@@ -57,7 +57,7 @@ export function HeroSection() {
           <div className="hero-in mt-9 flex flex-wrap items-center gap-3" style={{ animationDelay: "320ms" }}>
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition-all hover:shadow-blue-500/50 hover:brightness-110 active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-blue-600 to-violet-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition-all hover:shadow-blue-500/50 hover:brightness-110 active:scale-98"
             >
               View my work
               <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
@@ -65,7 +65,7 @@ export function HeroSection() {
             <a
               href={PROFILE_DATA.resumePath}
               download="Ahmad_Isah_CV.pdf"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/10 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/10 active:scale-98"
             >
               <FileDown className="h-4 w-4" />
               Download CV
